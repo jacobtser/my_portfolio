@@ -5,26 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jacob Tser Doku - Professional Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
             --primary-light: #dbeafe;
-            --secondary: #7e22ce;
-            --secondary-light: #f3e8ff;
             --dark: #1e293b;
-            --light: #f8fafc;
+            --light-bg: #f0f7ff;
+            --white: #ffffff;
             --gray: #64748b;
             --light-gray: #e2e8f0;
             --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --transition: all 0.3s ease;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 5px 15px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
         }
 
         * {
@@ -41,7 +38,7 @@
             font-family: 'Inter', sans-serif;
             color: var(--dark);
             line-height: 1.7;
-            background-color: var(--light);
+            background-color: var(--light-bg);
             overflow-x: hidden;
         }
 
@@ -63,7 +60,7 @@
             display: inline-block;
             padding: 14px 32px;
             background: var(--primary);
-            color: white;
+            color: var(--white);
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
@@ -71,45 +68,28 @@
             border: none;
             cursor: pointer;
             font-size: 1rem;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.7s;
-            z-index: -1;
-        }
-
-        .btn:hover::before {
-            left: 100%;
+            font-family: 'Inter', sans-serif;
         }
 
         .btn:hover {
             background: var(--primary-dark);
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             box-shadow: var(--shadow-lg);
         }
 
         .btn-secondary {
-            background: var(--secondary);
+            background: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
         }
 
         .btn-secondary:hover {
-            background: #6b21a8;
+            background: var(--primary-light);
         }
 
         /* Header & Navigation */
         header {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background-color: var(--white);
             box-shadow: var(--shadow-sm);
             position: fixed;
             width: 100%;
@@ -119,7 +99,6 @@
         }
 
         header.scrolled {
-            padding: 5px 0;
             box-shadow: var(--shadow-md);
         }
 
@@ -136,22 +115,7 @@
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary);
-            position: relative;
-        }
-
-        .logo::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: var(--secondary);
-            transition: width 0.5s ease;
-        }
-
-        .logo:hover::after {
-            width: 100%;
+            text-decoration: none;
         }
 
         .nav-links {
@@ -201,21 +165,9 @@
         /* Hero Section */
         .hero {
             padding: 180px 0 120px;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            background: linear-gradient(135deg, #e8f4fd 0%, #d6edff 50%, #e8f4fd 100%);
             text-align: center;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.05"><polygon fill="%232563eb" points="0,1000 1000,0 1000,1000"/></svg>');
-            background-size: cover;
         }
 
         .hero-content {
@@ -224,11 +176,9 @@
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--dark);
             animation: fadeInUp 1s ease;
         }
 
@@ -248,64 +198,14 @@
             margin: 0 10px;
         }
 
-        /* Floating Elements */
-        .floating-elements {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-        }
-
-        .floating-element {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(37, 99, 235, 0.1);
-            animation: float 15s infinite linear;
-        }
-
-        .floating-element:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-element:nth-child(2) {
-            width: 120px;
-            height: 120px;
-            top: 60%;
-            left: 80%;
-            animation-delay: -5s;
-        }
-
-        .floating-element:nth-child(3) {
-            width: 60px;
-            height: 60px;
-            top: 80%;
-            left: 20%;
-            animation-delay: -10s;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(180deg);
-            }
-            100% {
-                transform: translateY(0) rotate(360deg);
-            }
-        }
-
         /* Section Styling */
         section {
             padding: 100px 0;
             position: relative;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--white);
         }
 
         .section-title {
@@ -314,24 +214,35 @@
         }
 
         .section-title h2 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             position: relative;
             display: inline-block;
+            color: var(--dark);
         }
 
         .section-title h2::after {
             content: '';
             position: absolute;
-            bottom: -15px;
+            bottom: -12px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 5px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            border-radius: 3px;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
         }
 
         /* About Section */
+        #about {
+            background-color: var(--white);
+        }
+
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -345,6 +256,11 @@
             color: var(--dark);
         }
 
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
         .about-img {
             position: relative;
             text-align: center;
@@ -354,43 +270,51 @@
             position: relative;
             display: inline-block;
             border-radius: 50%;
-            padding: 8px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            animation: pulse 2s infinite;
+            padding: 6px;
+            background: var(--primary);
+            box-shadow: var(--shadow-lg);
         }
 
         .profile-img {
             width: 100%;
-            max-width: 400px;
+            max-width: 380px;
             height: auto;
             border-radius: 50%;
             display: block;
             transition: var(--transition);
-            box-shadow: var(--shadow-lg);
         }
 
         .profile-img:hover {
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
 
         .mission-vision {
-            margin-top: 2.5rem;
+            margin-top: 2rem;
             padding: 2rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: var(--shadow-md);
+            background: var(--light-bg);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
             transition: var(--transition);
-            border-left: 5px solid var(--primary);
         }
 
         .mission-vision:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .mission-vision h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .mission-vision p {
+            color: var(--gray);
+            margin-bottom: 1rem;
         }
 
         /* Documents Section */
-        .documents {
-            background: #f8fafc;
+        #documents {
+            background-color: var(--light-bg);
         }
 
         .doc-grid {
@@ -400,25 +324,23 @@
         }
 
         .doc-card {
-            background: white;
-            border-radius: 15px;
+            background: var(--white);
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-sm);
             transition: var(--transition);
-            position: relative;
-            height: 100%;
             display: flex;
             flex-direction: column;
         }
 
         .doc-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
         }
 
         .doc-icon {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
+            background: var(--primary);
+            color: var(--white);
             font-size: 2.5rem;
             padding: 30px;
             text-align: center;
@@ -433,7 +355,13 @@
 
         .doc-content h3 {
             font-size: 1.4rem;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .doc-content p {
+            color: var(--gray);
+            margin-bottom: 1rem;
         }
 
         .certificate-buttons {
@@ -450,44 +378,23 @@
         }
 
         /* Portfolio Section */
-        .portfolio-filters {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-
-        .filter-btn {
-            padding: 10px 25px;
-            margin: 5px;
-            background: white;
-            border: 1px solid var(--light-gray);
-            border-radius: 30px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 500;
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-md);
+        #portfolio {
+            background-color: var(--white);
         }
 
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
             gap: 30px;
         }
 
         .portfolio-item {
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
             position: relative;
             height: 280px;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--light-gray);
         }
 
         .portfolio-img {
@@ -503,14 +410,37 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(126, 34, 206, 0.9) 100%);
+            background: rgba(37, 99, 235, 0.92);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 25px;
             opacity: 0;
             transition: var(--transition);
+            color: var(--white);
+        }
+
+        .portfolio-overlay h3 {
+            color: var(--white);
+            font-size: 1.4rem;
+        }
+
+        .portfolio-overlay p {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .portfolio-overlay .btn {
+            background: var(--white);
+            color: var(--primary);
+            padding: 10px 24px;
+            font-size: 0.9rem;
+        }
+
+        .portfolio-overlay .btn:hover {
+            background: var(--primary-light);
         }
 
         .portfolio-item:hover .portfolio-overlay {
@@ -522,62 +452,67 @@
         }
 
         /* Skills Section */
+        #skills {
+            background-color: var(--light-bg);
+        }
+
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 35px;
         }
 
         .skill-category {
-            background: white;
+            background: var(--white);
             padding: 30px;
-            border-radius: 15px;
-            box-shadow: var(--shadow-md);
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
             transition: var(--transition);
-            border-top: 5px solid var(--primary);
+            border-top: 4px solid var(--primary);
         }
 
         .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
         }
 
         .skill-category h3 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             margin-bottom: 25px;
             color: var(--primary);
             text-align: center;
         }
 
         .skill-item {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .skill-header {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-size: 0.95rem;
         }
 
         .skill-bar {
-            height: 12px;
+            height: 10px;
             background: var(--light-gray);
-            border-radius: 10px;
+            border-radius: 5px;
             overflow: hidden;
-            position: relative;
         }
 
         .skill-progress {
             height: 100%;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            border-radius: 5px;
             width: 0;
-            transition: width 1.5s ease-in-out;
+            transition: width 1.2s ease-in-out;
         }
 
         /* Projects Section */
-        .projects {
-            background: #f8fafc;
+        #projects {
+            background-color: var(--white);
         }
 
         .project-tabs {
@@ -588,27 +523,30 @@
         }
 
         .project-tab {
-            padding: 12px 30px;
+            padding: 12px 28px;
             margin: 0 8px 15px;
-            background: white;
+            background: var(--light-bg);
             border: 1px solid var(--light-gray);
             border-radius: 8px;
             cursor: pointer;
             transition: var(--transition);
             font-weight: 500;
+            color: var(--dark);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
         }
 
         .project-tab.active, .project-tab:hover {
             background: var(--primary);
-            color: white;
+            color: var(--white);
             border-color: var(--primary);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             box-shadow: var(--shadow-md);
         }
 
         .project-content {
             display: none;
-            animation: fadeIn 0.8s ease;
+            animation: fadeIn 0.6s ease;
         }
 
         .project-content.active {
@@ -616,45 +554,50 @@
         }
 
         .project-detail {
-            background: white;
+            background: var(--light-bg);
             padding: 40px;
-            border-radius: 15px;
-            box-shadow: var(--shadow-md);
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
             margin-bottom: 40px;
             transition: var(--transition);
+            border: 1px solid var(--light-gray);
         }
 
         .project-detail:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .project-imgs {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 25px 0;
-        }
-
-        .project-img {
-            border-radius: 10px;
-            overflow: hidden;
-            height: 200px;
             box-shadow: var(--shadow-md);
-            transition: var(--transition);
         }
 
-        .project-img:hover {
-            transform: scale(1.05);
+        .project-detail h3 {
+            color: var(--primary);
+            font-size: 1.6rem;
         }
 
-        .project-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .project-detail p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-detail h4 {
+            color: var(--dark);
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-detail ul {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            padding-left: 1.2rem;
+        }
+
+        .project-detail ul li {
+            margin-bottom: 0.5rem;
         }
 
         /* Contact Section */
+        #contact {
+            background-color: var(--light-bg);
+        }
+
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -662,16 +605,22 @@
         }
 
         .contact-info {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
+            background: var(--primary);
+            color: var(--white);
             padding: 50px;
-            border-radius: 15px;
+            border-radius: 12px;
             box-shadow: var(--shadow-lg);
         }
 
         .contact-info h3 {
             font-size: 2rem;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .contact-info > p {
+            opacity: 0.9;
+            margin-bottom: 2rem;
         }
 
         .contact-detail {
@@ -681,27 +630,41 @@
         }
 
         .contact-icon {
-            font-size: 1.8rem;
-            margin-right: 20px;
             width: 50px;
             height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 50%;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: var(--shadow-lg);
+            margin-right: 20px;
+            font-size: 1.3rem;
+            color: var(--white);
             transition: var(--transition);
         }
 
-        .contact-form:hover {
-            transform: translateY(-5px);
+        .contact-detail:hover .contact-icon {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.05);
+        }
+
+        .contact-detail h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .contact-detail p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--light-gray);
         }
 
         .form-group {
@@ -710,18 +673,21 @@
 
         .form-group label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 500;
+            color: var(--dark);
         }
 
         .form-control {
             width: 100%;
-            padding: 15px 20px;
+            padding: 14px 18px;
             border: 1px solid var(--light-gray);
             border-radius: 8px;
             font-family: 'Inter', sans-serif;
             font-size: 1rem;
             transition: var(--transition);
+            background: var(--white);
+            color: var(--dark);
         }
 
         .form-control:focus {
@@ -738,7 +704,7 @@
         /* Footer */
         footer {
             background: var(--dark);
-            color: white;
+            color: var(--white);
             padding: 80px 0 40px;
         }
 
@@ -751,9 +717,15 @@
 
         .footer-logo {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .footer-about p {
+            color: #94a3b8;
+            line-height: 1.8;
         }
 
         .social-links {
@@ -765,25 +737,27 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.1);
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 50%;
-            margin-right: 15px;
-            color: white;
+            margin-right: 12px;
+            color: var(--white);
             transition: var(--transition);
+            text-decoration: none;
         }
 
         .social-links a:hover {
             background: var(--primary);
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
 
         .footer-links h4 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 25px;
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 12px;
+            color: var(--white);
         }
 
         .footer-links h4::after {
@@ -791,7 +765,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 50px;
+            width: 40px;
             height: 3px;
             background: var(--primary);
         }
@@ -801,27 +775,57 @@
         }
 
         .footer-links li {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .footer-links a {
-            color: #cbd5e1;
+            color: #94a3b8;
             text-decoration: none;
             transition: var(--transition);
-            display: inline-block;
         }
 
         .footer-links a:hover {
-            color: white;
-            transform: translateX(5px);
+            color: var(--white);
+            padding-left: 5px;
         }
 
         .copyright {
             text-align: center;
             padding-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             font-size: 0.9rem;
-            color: #94a3b8;
+            color: #64748b;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            box-shadow: var(--shadow-md);
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
         }
 
         /* Animations */
@@ -845,30 +849,103 @@
             }
         }
 
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(37, 99, 235, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
-            }
+        /* Dangme Phonetics & Numerals Tables */
+        .phonetics-scroll, .numerals-scroll {
+            overflow-x: auto;
+            border: 1px solid #d0d5dd;
+            border-radius: 8px;
+            background: #fff;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
         }
+        .dangme-table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 0.78rem;
+            font-family: 'Inter', monospace;
+        }
+        .dangme-table th {
+            color: #fff;
+            padding: 5px 6px;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            border: 1px solid rgba(255,255,255,0.15);
+            text-align: center;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .dangme-table .corner {
+            background: #1e293b;
+            color: #94a3b8;
+            padding: 6px 8px;
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            border: 1px solid #334155;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.7rem;
+        }
+        .dangme-table .cons {
+            background: #f1f5f9;
+            color: #1e293b;
+            padding: 5px 8px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            font-weight: 700;
+            position: sticky;
+            left: 0;
+            z-index: 1;
+        }
+        .dangme-table .syl {
+            padding: 4px 6px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+        .dangme-table .syl.filled { color: #1e293b; }
+        .dangme-table .syl.empty { color: #cbd5e1; font-size: 0.7rem; }
+        .dangme-table tbody tr:hover .syl.filled { background: #dbeafe; }
+        .dangme-table tbody tr:nth-child(even) .syl { background: #fafafa; }
+        .dangme-table tbody tr:nth-child(even):hover .syl.filled { background: #dbeafe; }
+        .numerals-grid th {
+            background: #1e293b;
+            padding: 10px 15px;
+            text-align: left;
+            border: 1px solid #334155;
+        }
+        .numerals-grid td {
+            padding: 8px 15px;
+            border: 1px solid #e2e8f0;
+            color: #1e293b;
+        }
+        .numerals-grid .dangme-word { font-weight: 500; }
+        .dangme-table, .dangme-table * {
+            user-select: none !important;
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            -webkit-touch-callout: none !important;
+        }
+        .dangme-table { pointer-events: auto; }
+        .dangme-table td, .dangme-table th { pointer-events: none; }
+        .dangme-table a { pointer-events: auto; }
 
         /* Responsive Design */
         @media (max-width: 992px) {
             .about-content, .contact-container {
                 grid-template-columns: 1fr;
             }
-            
+
             .hero h1 {
-                font-size: 3.2rem;
+                font-size: 2.8rem;
             }
-            
+
             .section-title h2 {
-                font-size: 2.4rem;
+                font-size: 2.2rem;
             }
         }
 
@@ -876,14 +953,14 @@
             .menu-btn {
                 display: block;
             }
-            
+
             .nav-links {
                 position: fixed;
                 top: 80px;
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 80px);
-                background: white;
+                background: var(--white);
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
@@ -891,25 +968,36 @@
                 transition: var(--transition);
                 box-shadow: var(--shadow-md);
             }
-            
+
             .nav-links.active {
                 left: 0;
             }
-            
+
             .nav-links li {
                 margin: 20px 0;
             }
-            
+
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 2.4rem;
             }
-            
+
             .section-title h2 {
                 font-size: 2rem;
             }
-            
+
             .hero {
                 padding: 150px 0 100px;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .scroll-top {
+                bottom: 20px;
+                left: 20px;
+                width: 40px;
+                height: 40px;
             }
         }
 
@@ -917,30 +1005,123 @@
             .hero {
                 padding: 130px 0 80px;
             }
-            
+
             .hero h1 {
-                font-size: 2.3rem;
+                font-size: 2rem;
             }
-            
+
             .hero p {
                 font-size: 1.1rem;
             }
-            
+
             section {
-                padding: 70px 0;
+                padding: 60px 0;
             }
-            
+
             .btn {
-                padding: 12px 25px;
+                padding: 12px 24px;
             }
-            
+
             .doc-grid, .portfolio-grid, .skills-container {
                 grid-template-columns: 1fr;
             }
+
+            .contact-info, .contact-form {
+                padding: 30px;
+            }
         }
+
+        /* Form status messages */
+        .form-status {
+            margin-top: 15px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .form-status.success {
+            display: block;
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+
+        .form-status.error {
+            display: block;
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+
+        /* Tawk.to Quick Questions */
+        .tawk-questions {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            z-index: 997;
+            display: none;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+            animation: tawkFadeIn 0.3s ease;
+        }
+        .tawk-questions.show { display: flex; }
+        @keyframes tawkFadeIn { from { opacity:0; transform:translateY(10px) scale(0.95); } to { opacity:1; transform:translateY(0) scale(1); } }
+        .tawk-q-chip {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            color: #1e293b;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+            white-space: nowrap;
+            max-width: 300px;
+            text-align: left;
+        }
+        .tawk-q-chip:hover {
+            background: #2563eb;
+            color: #fff;
+            border-color: #2563eb;
+            transform: translateX(-4px);
+            box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+        }
+        .tawk-q-chip .label { display: block; line-height: 1.4; }
+        .tawk-q-chip .sub { font-size: 0.7rem; opacity: 0.7; font-weight: 400; display: block; margin-top: 2px; }
+        .tawk-q-chip:hover .sub { opacity: 0.9; }
+        .tawk-q-hint {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            z-index: 996;
+            font-size: 0.75rem;
+            color: #64748b;
+            background: rgba(255,255,255,0.9);
+            padding: 6px 14px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            cursor: pointer;
+            display: none;
+            animation: tawkFadeIn 0.5s ease;
+            font-family: 'Inter', sans-serif;
+            pointer-events: none;
+        }
+        .tawk-q-hint i { color: #f59e0b; margin-right: 4px; }
+        @media (max-width: 480px) {
+            .tawk-questions { right: 15px; bottom: 90px; }
+            .tawk-q-chip { max-width: 240px; font-size: 0.75rem; padding: 6px 12px; }
+            .tawk-q-hint { right: 15px; bottom: 90px; font-size: 0.7rem; }
+        }
+
     </style>
 </head>
 <body>
+
     <!-- Header & Navigation -->
     <header id="header">
         <div class="container">
@@ -961,19 +1142,19 @@
         </div>
     </header>
 
+    <!-- Scroll to top button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
-        <div class="floating-elements">
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-        </div>
         <div class="container">
             <div class="hero-content">
-                <h1 data-aos="fade-up">Creating Impact Through Innovation</h1>
-                <p data-aos="fade-up" data-aos-delay="200">Welcome to my professional portfolio showcasing my work, skills, and achievements in the field.</p>
+                <h1 data-aos="fade-up">Jacob Tser Doku</h1>
+                <p data-aos="fade-up" data-aos-delay="200">Industrial Engineering Student | Web Developer & AI Research Assistant — leveraging AI, data analysis, and engineering principles for impactful research and digital solutions.</p>
                 <div class="hero-btns" data-aos="fade-up" data-aos-delay="400">
-                    <a href="tel:+233559499007" class="btn">Get In Touch</a>
+                    <a href="#contact" class="btn">Get In Touch</a>
                     <a href="#portfolio" class="btn btn-secondary">View Portfolio</a>
                 </div>
             </div>
@@ -989,22 +1170,20 @@
             <div class="about-content">
                 <div class="about-text" data-aos="fade-right">
                     <h3>Hello, I'm Jacob Tser Doku</h3>
-                    <p>I'm a passionate professional with expertise in multiple domains.</p>
-                    <p>With over 2 years of experience, I've developed a diverse skill set that allows me to approach problems from multiple perspectives and deliver innovative solutions.</p>
-                    <p>My journey has taken me through various industries, allowing me to develop a unique perspective and approach to challenges.</p>
-                    <p>I believe in continuous learning and pushing the boundaries of what's possible.</p>
+                    <p>I am a final-year Industrial Engineering student at KNUST with a strong foundation in web development, AI, and data analysis. My coursework in <strong>Artificial Intelligence 150</strong>, Operations Research, Quality Assurance, and Project Management — combined with hands-on experience using <strong>ChatGPT, Claude, Gemini, Perplexity AI, Python, R, SPSS, and Excel</strong> — enables me to craft impactful research papers, conduct literature reviews, and leverage AI models for deeper insights.</p>
+                    <p>As Head of Web Development at Naa-Wuni Vela Shea Butter and President of the ADA Students' Union (KNUST Chapter), I bridge technical skills with leadership and community impact. I develop websites for businesses, startups, and NGOs, and apply data-driven approaches to solve real-world problems.</p>
+                    <p>I am passionate about using AI and engineering principles for research writing, data analysis, and building innovative digital solutions that drive efficiency and empower communities.</p>
                     <div class="mission-vision" data-aos="zoom-in" data-aos-delay="200">
                         <h4>My Mission</h4>
-                        <p>To leverage my skills and expertise to create meaningful solutions that positively impact people's lives and contribute to technological advancement.</p>
-                        
+                        <p>To combine AI, data analysis, and industrial engineering principles to produce meaningful research and digital solutions that contribute to technological advancement and community development.</p>
+
                         <h4>My Vision</h4>
-                        <p>To be recognized as a leader in my field, known for innovation, excellence, and the ability to transform ideas into reality.</p>
+                        <p>To be at the forefront of AI-driven research and web development, transforming ideas into impactful papers, insights, and platforms that solve real-world problems.</p>
                     </div>
                 </div>
                 <div class="about-img" data-aos="fade-left" data-aos-delay="300">
                     <div class="profile-img-container">
-                        <!-- REPLACE WITH YOUR PROFILE IMAGE -->
-                        <img src="images/profile.jpg" alt="Jacob Tser Doku" class="profile-img">
+                        <img src="profile.jpg" alt="Jacob Tser Doku" class="profile-img">
                     </div>
                 </div>
             </div>
@@ -1012,7 +1191,7 @@
     </section>
 
     <!-- Documents Section -->
-    <section id="documents" class="documents">
+    <section id="documents">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
                 <h2>My Documents</h2>
@@ -1023,43 +1202,29 @@
                         <i class="fas fa-file-alt"></i>
                     </div>
                     <div class="doc-content">
-                        <h3>Resume</h3>
-                        <p>My recent resume.</p>
-                        <!-- REPLACE WITH YOUR RESUME -->
-                        <a href="documents/CV.pdf" class="btn" download>Download</a>
+                        <h3>Resume / CV</h3>
+                        <p>My professional resume highlighting my experience, education, and qualifications in web development and software engineering.</p>
+                        <a href="JacobTserDoku_BSc.IndustrialEngineering.pdf" class="btn" download><i class="fas fa-download"></i> Download Resume</a>
                     </div>
                 </div>
-                
+
                 <div class="doc-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="doc-icon">
                         <i class="fas fa-certificate"></i>
                     </div>
                     <div class="doc-content">
                         <h3>Certifications</h3>
-                        <p>Collection of my professional certifications and qualifications.</p>
+                        <p>Collection of my professional certifications and qualifications in leadership, cybersecurity, and design.</p>
                         <div class="certificate-buttons">
-                            <!-- REPLACE WITH YOUR CERTIFICATES -->
-                            <a href="documents/certificates/ILF 1.pdf" class="btn">Leadership</a>
-                            <a href="documents/certificates/ILF 2.pdf" class="btn">Leadership</a>
-                            <a href="documents/certificates/ILF 3.pdf" class="btn">Leadership</a>
-                            <a href="documents/certificates/ILF 4.pdf" class="btn">Leadership</a>
-                            <a href="documents/certificates/ILF 5.pdf" class="btn">Leadership</a>
-                            <a href="documents/certificates/ILF 6.pdf" class="btn">Leadership</a>
-                            <a href="documents/certificates/CYBER SECURITY.pdf" class="btn">Skill</a>
-                            <a href="documents/certificates/AUTODESK CERT.pdf" class="btn">Skill</a>
+                            <a href="ILF 1.pdf" class="btn">Leadership 1</a>
+                            <a href="ILF 3.pdf" class="btn">Leadership 2</a>
+                            <a href="ILF 4.pdf" class="btn">Leadership 3</a>
+                            <a href="ILF 5.pdf" class="btn">Leadership 4</a>
+                            <a href="ILF 6.pdf" class="btn">Leadership 5</a>
+                            <a href="CYBER SECURITY.pdf" class="btn">Cybersecurity</a>
+                            <a href="AUTODESK CERT.pdf" class="btn">Design</a>
+                            <a href="AI 150 CERT.pdf" class="btn">AI 150 Fundamentals</a>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="doc-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="doc-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <div class="doc-content">
-                        <h3>CV Portfolio</h3>
-                        <p>Comprehensive CV with detailed project descriptions and case studies.</p>
-                        <!-- REPLACE WITH YOUR CV -->
-                        <a href="documents/CV.pdf" class="btn" download>Download</a>
                     </div>
                 </div>
             </div>
@@ -1071,68 +1236,34 @@
         <div class="container">
             <div class="section-title" data-aos="fade-up">
                 <h2>My Portfolio</h2>
+                <p>Featured projects and live websites I have developed</p>
             </div>
-            
-            <div class="portfolio-filters" data-aos="fade-up" data-aos-delay="100">
-                <button class="filter-btn active">All</button>
-                <button class="filter-btn">Research And Projects</button>
-                <button class="filter-btn">Skills</button>
-                <button class="filter-btn">Services</button>
-            </div>
-            
+
             <div class="portfolio-grid">
-                <!-- PORTFOLIO ITEM 1 -->
                 <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
-                    <!-- REPLACE WITH YOUR PORTFOLIO IMAGE -->
-                    <img src="images/portfolio/1.Png" alt="Project 1" class="portfolio-img">
+                    <img src="1.jpeg" alt="School Management System" class="portfolio-img">
                     <div class="portfolio-overlay">
-                        <h3>Project Name 1</h3>
-                        <p>Project Category</p>
-                        <a href="#" class="btn">View Project</a>
+                        <h3>School Management System</h3>
+                        <p>A comprehensive platform for managing school activities, built with Next.js and TypeScript.</p>
+                        <a href="https://github.com/SocialTech-Innovation" class="btn">View on GitHub</a>
                     </div>
                 </div>
-                
-                <!-- PORTFOLIO ITEM 2 -->
+
                 <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
-                    <!-- REPLACE WITH YOUR PORTFOLIO IMAGE -->
-                    <img src="images/portfolio/2.png" alt="Project 2" class="portfolio-img">
+                    <img src="2.png" alt="Forefront Innovation Website" class="portfolio-img">
                     <div class="portfolio-overlay">
-                        <h3>Project Name 2</h3>
-                        <p>Project Category</p>
-                        <a href="#" class="btn">View Project</a>
+                        <h3>Forefront Innovation Ltd</h3>
+                        <p>A professional startup website showcasing products and services with direct email integration.</p>
+                        <a href="https://angelbluef65-tech.github.io/forefrontinnovationltd/" class="btn">Visit Site</a>
                     </div>
                 </div>
 
-                <!-- PORTFOLIO ITEM 3 -->
                 <div class="portfolio-item" data-aos="fade-up" data-aos-delay="400">
-                    <!-- REPLACE WITH YOUR PORTFOLIO IMAGE -->
-                    <img src="images/portfolio/3.png" alt="Project 3" class="portfolio-img">
+                    <img src="3.png" alt="Glam & Garget Hub" class="portfolio-img">
                     <div class="portfolio-overlay">
-                        <h3>Project Name 3</h3>
-                        <p>Project Category</p>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
-                </div>
-
-                <!-- PORTFOLIO ITEM 4 -->
-                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="500">
-                    <!-- REPLACE WITH YOUR PORTFOLIO IMAGE -->
-                    <img src="images/portfolio/4.png" alt="Project 4" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Project Name 4</h3>
-                        <p>Project Category</p>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
-                </div>
-
-                <!-- PORTFOLIO ITEM 5 -->
-                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="600">
-                    <!-- REPLACE WITH YOUR PORTFOLIO IMAGE -->
-                    <img src="images/portfolio/5.png" alt="Project 5" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Project Name 5</h3>
-                        <p>Project Category</p>
-                        <a href="#" class="btn">View Project</a>
+                        <h3>Glam & Garget Hub</h3>
+                        <p>A fully functional e-commerce business website with WhatsApp ordering integration.</p>
+                        <a href="https://jacobtser.github.io/glamandgargethub/" class="btn">Visit Site</a>
                     </div>
                 </div>
             </div>
@@ -1144,89 +1275,56 @@
         <div class="container">
             <div class="section-title" data-aos="fade-up">
                 <h2>My Skills</h2>
+                <p>Core competencies in web development and software engineering</p>
             </div>
-            
+
             <div class="skills-container">
                 <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Technical Skills</h3>
-                    
+                    <h3>Front-End Development</h3>
+
                     <div class="skill-item">
                         <div class="skill-header">
-                            <span>Python Programming</span>
+                            <span>HTML5 & CSS3</span>
                             <span>95%</span>
                         </div>
                         <div class="skill-bar">
                             <div class="skill-progress" data-width="95"></div>
                         </div>
                     </div>
-                    
+
                     <div class="skill-item">
                         <div class="skill-header">
-                            <span>Computer-Aided Design and Simulations</span>
+                            <span>JavaScript (ES6+)</span>
                             <span>90%</span>
                         </div>
                         <div class="skill-bar">
                             <div class="skill-progress" data-width="90"></div>
                         </div>
                     </div>
-                    
+
                     <div class="skill-item">
                         <div class="skill-header">
-                            <span>UI/UX Design</span>
+                            <span>React & Next.js</span>
                             <span>85%</span>
                         </div>
                         <div class="skill-bar">
                             <div class="skill-progress" data-width="85"></div>
                         </div>
                     </div>
-                    
+
                     <div class="skill-item">
                         <div class="skill-header">
-                            <span>Electrical Repairs</span>
-                            <span>88%</span>
+                            <span>TypeScript</span>
+                            <span>80%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="88"></div>
+                            <div class="skill-progress" data-width="80"></div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-                    <h3>Professional Skills</h3>
-                    
+
                     <div class="skill-item">
                         <div class="skill-header">
-                            <span>Team Leadership</span>
-                            <span>92%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="92"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Effective Communication</span>
-                            <span>93%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="93"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Problem Solving</span>
-                            <span>96%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="96"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Project Management</span>
+                            <span>Responsive Design</span>
                             <span>90%</span>
                         </div>
                         <div class="skill-bar">
@@ -1234,47 +1332,111 @@
                         </div>
                     </div>
                 </div>
-                
+
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3>AI & Research</h3>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>ChatGPT / OpenAI Models</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Claude (Anthropic) & Gemini</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Research Writing & Lit. Review</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Data Analysis (Python, R, SPSS, Excel)</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Perplexity AI & Prompt Engineering</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
-                    <h3>Tools & Technologies</h3>
-                    
+                    <h3>Engineering & Tools</h3>
+
                     <div class="skill-item">
                         <div class="skill-header">
-                            <span>Advanced Excel</span>
-                            <span>88%</span>
+                            <span>Operations Research</span>
+                            <span>80%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="88"></div>
+                            <div class="skill-progress" data-width="80"></div>
                         </div>
                     </div>
-                    
+
                     <div class="skill-item">
                         <div class="skill-header">
-                            <span>MS Word</span>
-                            <span>91%</span>
+                            <span>Git & GitHub</span>
+                            <span>90%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="91"></div>
+                            <div class="skill-progress" data-width="90"></div>
                         </div>
                     </div>
-                    
+
                     <div class="skill-item">
                         <div class="skill-header">
-                            <span>Kali Linux</span>
-                            <span>54%</span>
+                            <span>Project Management</span>
+                            <span>80%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="54"></div>
+                            <div class="skill-progress" data-width="80"></div>
                         </div>
                     </div>
-                    
+
                     <div class="skill-item">
                         <div class="skill-header">
-                            <span>Canva</span>
-                            <span>87%</span>
+                            <span>Quality Assurance</span>
+                            <span>80%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="87"></div>
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Leadership & Communication</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
                         </div>
                     </div>
                 </div>
@@ -1283,96 +1445,1756 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
                 <h2>My Projects</h2>
+                <p>Detailed overview of key projects I have worked on</p>
             </div>
-            
+
             <div class="project-tabs" data-aos="fade-up" data-aos-delay="100">
-                <div class="project-tab active" data-tab="project1">Dã́ngme Kãnélɔ (Interactive Dã́ngme Text to Speech)</div>
+                <div class="project-tab active" data-tab="project1">School Management System</div>
+                <div class="project-tab" data-tab="project2">Forefront Innovation Ltd</div>
+                <div class="project-tab" data-tab="project3">Glam & Garget Hub</div>
+                <div class="project-tab" data-tab="project4">Naa-Wuni Vela</div>
+                <div class="project-tab" data-tab="project5">ADASU National</div>
+                <div class="project-tab" data-tab="project6">Dangme Phonetics & Numbering System</div>
             </div>
-            
+
             <!-- PROJECT 1 -->
             <div class="project-content active" id="project1" data-aos="fade-up" data-aos-delay="200">
                 <div class="project-detail">
-                    <h3>Dã́ngme Kãnélɔ (Interactive Dã́ngme Text to Speech)</h3>
-                    <p>Dã́ngme Kãnélɔ (Interactive Dã́ngme Text to Speech) is a system developed to help Dã́ngme learners effectively learn how words in the language are pronounced. It also aids researchers of the language in advancing the pronunciation of huge Dã́ngme numbers.</p>
-                    
+                    <h3>School Management System</h3>
+                    <p>A collaborative team project — a comprehensive web-based platform built with Next.js to streamline school administration and academic management. I focused specifically on developing the parent dashboard, enabling guardians to monitor student progress, attendance, and academic performance in real time.</p>
+
+                    <h4>My Contribution</h4>
+                    <ul>
+                        <li>Designed and coded the full parent dashboard interface</li>
+                        <li>Implemented real-time student progress tracking and reporting</li>
+                        <li>Integrated attendance monitoring and grade viewing for parents</li>
+                        <li>Collaborated with team members on system architecture</li>
+                    </ul>
+
+                    <a href="https://github.com/SocialTech-Innovation" class="btn">View on GitHub</a>
+                </div>
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="project-content" id="project2" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-detail">
+                    <h3>Forefront Innovation Ltd</h3>
+                    <p>A professional startup website built to showcase products and services with a clean, modern design. Developed using core web technologies with a focus on performance and user experience.</p>
+
                     <h4>Key Features</h4>
                     <ul>
-                        <li>Text conversion to audio in Dangme</li>
-                        <li>Themes</li>
-                        <li>Instructions for easy navigation</li>
+                        <li>Product catalog and service showcase</li>
+                        <li>Direct email inquiry system integrated on site</li>
+                        <li>Responsive design for all device sizes</li>
+                        <li>Optimized loading performance</li>
                     </ul>
-                    
-                    <!-- LINK TO PROJECT DOCUMENTS -->
-                    <a href="documents/project1-docs.pdf" class="btn">View Project Documents</a>
+
+                    <a href="https://angelbluef65-tech.github.io/forefrontinnovationltd/" class="btn">Visit Live Site</a>
+                </div>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="project-content" id="project3" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-detail">
+                    <h3>Glam & Garget Hub</h3>
+                    <p>A fully functional e-commerce business website that enables customers to browse products and place orders seamlessly. Designed with a focus on visual appeal and conversion optimization.</p>
+
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Visually appealing product gallery and layout</li>
+                        <li>Direct ordering through WhatsApp integration</li>
+                        <li>Mobile-first responsive design</li>
+                        <li>Fast and intuitive browsing experience</li>
+                    </ul>
+
+                    <a href="https://jacobtser.github.io/glamandgargethub/" class="btn">Visit Live Site</a>
+                </div>
+            </div>
+
+            <!-- PROJECT 4 -->
+            <div class="project-content" id="project4" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-detail">
+                    <h3>Naa-Wuni Vela</h3>
+                    <p>A premium brand website for Naa-Wuni Vela, a social enterprise that empowers rural women through sustainable shea butter production. The site showcases their mission, products, and community impact, with AI-driven features to enhance user engagement and operational efficiency.</p>
+
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>AI-powered chatbot for customer inquiries and order assistance</li>
+                        <li>Product catalog and e-commerce ordering system</li>
+                        <li>Story-driven brand presentation with impact metrics</li>
+                        <li>Responsive design optimized for all devices</li>
+                    </ul>
+
+                    <a href="https://jacobtser.github.io/naa-wunivela/" class="btn">Visit Live Site</a>
+                </div>
+            </div>
+
+            <!-- PROJECT 5 -->
+            <div class="project-content" id="project5" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-detail">
+                    <h3>ADASU National Official Website</h3>
+                    <p>The official website for the ADA Students Union (ADASU) National, serving as the representative body for ADA students across tertiary institutions in Ghana. The platform connects students, showcases leadership, and facilitates community engagement.</p>
+
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Executive team profiles and leadership directory</li>
+                        <li>Vision, mission, and constitutional information</li>
+                        <li>Event calendar and outreach program gallery</li>
+                        <li>Student resources and contact integration</li>
+                    </ul>
+
+                    <a href="https://jacobtser.github.io/ada-students-union-ADASU-national/" class="btn">Visit Live Site</a>
+                </div>
+            </div>
+
+            <!-- PROJECT 6 -->
+            <div class="project-content" id="project6" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-detail">
+                    <h3>Dangme Phonetics & Numbering System</h3>
+                    <p>A comprehensive structured Excel workbook documenting the entire Dangme (Ada) language phonetics foundation and numbering system. This resource captures the core building blocks of the Dangme language — from vowels, consonants, and tone markers to the complete numeral system — serving as a reference for language preservation, learning, and technology integration.</p>
+
+                    <div class="dangme-content">
+<div class="phonetics-section">
+  <h4 style="color:#1e293b;margin:0 0 10px;font-size:1.2rem;">Dangme Phonetics — Consonant-Vowel Grid</h4>
+  <p style="color:#64748b;font-size:0.85rem;margin-bottom:15px;">30 consonants × 46 vowels with full tone markings. Table is view-only to preserve data integrity.</p>
+  <div class="phonetics-scroll">
+    <table class="dangme-table phonetics-grid">
+      <thead><tr>
+        <th class="corner">C \ V</th>
+        <th style="background:#2563eb;">A</th>
+        <th style="background:#2563eb;">À</th>
+        <th style="background:#2563eb;">Á</th>
+        <th style="background:#2563eb;">Ã</th>
+        <th style="background:#2563eb;">Ã́</th>
+        <th style="background:#2563eb;">Ā</th>
+        <th style="background:#2563eb;">Ã̄</th>
+        <th style="background:#059669;">E</th>
+        <th style="background:#059669;">È</th>
+        <th style="background:#059669;">É</th>
+        <th style="background:#059669;">Ē</th>
+        <th style="background:#d97706;">ɛ</th>
+        <th style="background:#d97706;">Ɛ</th>
+        <th style="background:#d97706;">ɛ̀</th>
+        <th style="background:#d97706;">ɛ́</th>
+        <th style="background:#d97706;">ɛ́</th>
+        <th style="background:#d97706;">ɛ̃</th>
+        <th style="background:#d97706;">Ɛ̃</th>
+        <th style="background:#d97706;">Ɛ̃́</th>
+        <th style="background:#d97706;">Ɛ̄</th>
+        <th style="background:#d97706;">Ɛ̃̄</th>
+        <th style="background:#7c3aed;">I</th>
+        <th style="background:#7c3aed;">Ì</th>
+        <th style="background:#7c3aed;">Í</th>
+        <th style="background:#7c3aed;">Ĩ</th>
+        <th style="background:#7c3aed;">Ĩ́</th>
+        <th style="background:#7c3aed;">Ī</th>
+        <th style="background:#7c3aed;">Ĩ̄</th>
+        <th style="background:#dc2626;">O</th>
+        <th style="background:#dc2626;">Ò</th>
+        <th style="background:#dc2626;">Ó</th>
+        <th style="background:#dc2626;">Ō</th>
+        <th style="background:#0891b2;">ɔ</th>
+        <th style="background:#0891b2;">ɔ̀</th>
+        <th style="background:#0891b2;">ɔ́</th>
+        <th style="background:#0891b2;">ɔ̃</th>
+        <th style="background:#0891b2;">Ɔ̃́</th>
+        <th style="background:#0891b2;">Ɔ̄</th>
+        <th style="background:#0891b2;">Ɔ̃̄</th>
+        <th style="background:#db2777;">U</th>
+        <th style="background:#db2777;">Ù</th>
+        <th style="background:#db2777;">Ú</th>
+        <th style="background:#db2777;">Ũ</th>
+        <th style="background:#db2777;">Ṹ</th>
+        <th style="background:#db2777;">Ū</th>
+        <th style="background:#db2777;">Ũ̄</th>
+      </tr></thead>
+      <tbody>
+      <tr>
+        <td class="cons">B</td>
+        <td class="syl filled">BA</td>
+        <td class="syl filled">BÀ</td>
+        <td class="syl filled">BÁ</td>
+        <td class="syl filled">BÃ</td>
+        <td class="syl filled">BÃ́</td>
+        <td class="syl filled">BĀ</td>
+        <td class="syl filled">BÃ̄</td>
+        <td class="syl filled">BE</td>
+        <td class="syl filled">BÈ</td>
+        <td class="syl filled">BÉ</td>
+        <td class="syl filled">BĒ</td>
+        <td class="syl filled">Bɛ</td>
+        <td class="syl filled">BƐ</td>
+        <td class="syl filled">Bɛ̀</td>
+        <td class="syl filled">Bɛ́</td>
+        <td class="syl filled">Bɛ́</td>
+        <td class="syl filled">Bɛ̃</td>
+        <td class="syl filled">BƐ̃</td>
+        <td class="syl filled">BƐ̃́</td>
+        <td class="syl filled">BƐ̄</td>
+        <td class="syl filled">BƐ̃̄</td>
+        <td class="syl filled">BI</td>
+        <td class="syl filled">BÌ</td>
+        <td class="syl filled">BÍ</td>
+        <td class="syl filled">BĨ</td>
+        <td class="syl filled">BĨ́</td>
+        <td class="syl filled">BĪ</td>
+        <td class="syl filled">BĨ̄</td>
+        <td class="syl filled">BO</td>
+        <td class="syl filled">BÒ</td>
+        <td class="syl filled">BÓ</td>
+        <td class="syl filled">BŌ</td>
+        <td class="syl filled">Bɔ</td>
+        <td class="syl filled">Bɔ̀</td>
+        <td class="syl filled">Bɔ́</td>
+        <td class="syl filled">Bɔ̃</td>
+        <td class="syl filled">BƆ̃́</td>
+        <td class="syl filled">BƆ̄</td>
+        <td class="syl filled">BƆ̃̄</td>
+        <td class="syl filled">BU</td>
+        <td class="syl filled">BÙ</td>
+        <td class="syl filled">BÚ</td>
+        <td class="syl filled">BŨ</td>
+        <td class="syl filled">BṸ</td>
+        <td class="syl filled">BŪ</td>
+        <td class="syl filled">BŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">D</td>
+        <td class="syl filled">DA</td>
+        <td class="syl filled">DÀ</td>
+        <td class="syl filled">DÁ</td>
+        <td class="syl filled">DÃ</td>
+        <td class="syl filled">DÃ́</td>
+        <td class="syl filled">DĀ</td>
+        <td class="syl filled">DÃ̄</td>
+        <td class="syl filled">DE</td>
+        <td class="syl filled">DÈ</td>
+        <td class="syl filled">DÉ</td>
+        <td class="syl filled">DĒ</td>
+        <td class="syl filled">Dɛ</td>
+        <td class="syl filled">DƐ</td>
+        <td class="syl filled">Dɛ̀</td>
+        <td class="syl filled">Dɛ́</td>
+        <td class="syl filled">Dɛ́</td>
+        <td class="syl filled">Dɛ̃</td>
+        <td class="syl filled">DƐ̃</td>
+        <td class="syl filled">DƐ̃́</td>
+        <td class="syl filled">DƐ̄</td>
+        <td class="syl filled">DƐ̃̄</td>
+        <td class="syl filled">DI</td>
+        <td class="syl filled">DÌ</td>
+        <td class="syl filled">DÍ</td>
+        <td class="syl filled">DĨ</td>
+        <td class="syl filled">DĨ́</td>
+        <td class="syl filled">DĪ</td>
+        <td class="syl filled">DĨ̄</td>
+        <td class="syl filled">DO</td>
+        <td class="syl filled">DÒ</td>
+        <td class="syl filled">DÓ</td>
+        <td class="syl filled">DŌ</td>
+        <td class="syl filled">Dɔ</td>
+        <td class="syl filled">Dɔ̀</td>
+        <td class="syl filled">Dɔ́</td>
+        <td class="syl filled">Dɔ̃</td>
+        <td class="syl filled">DƆ̃́</td>
+        <td class="syl filled">DƆ̄</td>
+        <td class="syl filled">DƆ̃̄</td>
+        <td class="syl filled">DU</td>
+        <td class="syl filled">DÙ</td>
+        <td class="syl filled">DÚ</td>
+        <td class="syl filled">DŨ</td>
+        <td class="syl filled">DṸ</td>
+        <td class="syl filled">DŪ</td>
+        <td class="syl filled">DŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">F</td>
+        <td class="syl filled">FA</td>
+        <td class="syl filled">FÀ</td>
+        <td class="syl filled">FÁ</td>
+        <td class="syl filled">FÃ</td>
+        <td class="syl filled">FÃ́</td>
+        <td class="syl filled">FĀ</td>
+        <td class="syl filled">FÃ̄</td>
+        <td class="syl filled">FE</td>
+        <td class="syl filled">FÈ</td>
+        <td class="syl filled">FÉ</td>
+        <td class="syl filled">FĒ</td>
+        <td class="syl filled">Fɛ</td>
+        <td class="syl filled">FƐ</td>
+        <td class="syl filled">Fɛ̀</td>
+        <td class="syl filled">Fɛ́</td>
+        <td class="syl filled">Fɛ́</td>
+        <td class="syl filled">Fɛ̃</td>
+        <td class="syl filled">FƐ̃</td>
+        <td class="syl filled">FƐ̃́</td>
+        <td class="syl filled">FƐ̄</td>
+        <td class="syl filled">FƐ̃̄</td>
+        <td class="syl filled">FI</td>
+        <td class="syl filled">FÌ</td>
+        <td class="syl filled">FÍ</td>
+        <td class="syl filled">FĨ</td>
+        <td class="syl filled">FĨ́</td>
+        <td class="syl filled">FĪ</td>
+        <td class="syl filled">FĨ̄</td>
+        <td class="syl filled">FO</td>
+        <td class="syl filled">FÒ</td>
+        <td class="syl filled">FÓ</td>
+        <td class="syl filled">FŌ</td>
+        <td class="syl filled">Fɔ</td>
+        <td class="syl filled">Fɔ̀</td>
+        <td class="syl filled">Fɔ́</td>
+        <td class="syl filled">Fɔ̃</td>
+        <td class="syl filled">FƆ̃́</td>
+        <td class="syl filled">FƆ̄</td>
+        <td class="syl filled">FƆ̃̄</td>
+        <td class="syl filled">FU</td>
+        <td class="syl filled">FÙ</td>
+        <td class="syl filled">FÚ</td>
+        <td class="syl filled">FŨ</td>
+        <td class="syl filled">FṸ</td>
+        <td class="syl filled">FŪ</td>
+        <td class="syl filled">FŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">G</td>
+        <td class="syl filled">GA</td>
+        <td class="syl filled">GÀ</td>
+        <td class="syl filled">GÁ</td>
+        <td class="syl filled">GÃ</td>
+        <td class="syl filled">GÃ́</td>
+        <td class="syl filled">GĀ</td>
+        <td class="syl filled">GÃ̄</td>
+        <td class="syl filled">GE</td>
+        <td class="syl filled">GÈ</td>
+        <td class="syl filled">GÉ</td>
+        <td class="syl filled">GĒ</td>
+        <td class="syl filled">Gɛ</td>
+        <td class="syl filled">GƐ</td>
+        <td class="syl filled">Gɛ̀</td>
+        <td class="syl filled">Gɛ́</td>
+        <td class="syl filled">Gɛ́</td>
+        <td class="syl filled">Gɛ̃</td>
+        <td class="syl filled">GƐ̃</td>
+        <td class="syl filled">GƐ̃́</td>
+        <td class="syl filled">GƐ̄</td>
+        <td class="syl filled">GƐ̃̄</td>
+        <td class="syl filled">GI</td>
+        <td class="syl filled">GÌ</td>
+        <td class="syl filled">GÍ</td>
+        <td class="syl filled">GĨ</td>
+        <td class="syl filled">GĨ́</td>
+        <td class="syl filled">GĪ</td>
+        <td class="syl filled">GĨ̄</td>
+        <td class="syl filled">GO</td>
+        <td class="syl filled">GÒ</td>
+        <td class="syl filled">GÓ</td>
+        <td class="syl filled">GŌ</td>
+        <td class="syl filled">Gɔ</td>
+        <td class="syl filled">Gɔ̀</td>
+        <td class="syl filled">Gɔ́</td>
+        <td class="syl filled">Gɔ̃</td>
+        <td class="syl filled">GƆ̃́</td>
+        <td class="syl filled">GƆ̄</td>
+        <td class="syl filled">GƆ̃̄</td>
+        <td class="syl filled">GU</td>
+        <td class="syl filled">GÙ</td>
+        <td class="syl filled">GÚ</td>
+        <td class="syl filled">GŨ</td>
+        <td class="syl filled">GṸ</td>
+        <td class="syl filled">GŪ</td>
+        <td class="syl filled">GŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">H</td>
+        <td class="syl filled">HA</td>
+        <td class="syl filled">HÀ</td>
+        <td class="syl filled">HÁ</td>
+        <td class="syl filled">HÃ</td>
+        <td class="syl filled">HÃ́</td>
+        <td class="syl filled">HĀ</td>
+        <td class="syl filled">HÃ̄</td>
+        <td class="syl filled">HE</td>
+        <td class="syl filled">HÈ</td>
+        <td class="syl filled">HÉ</td>
+        <td class="syl filled">HĒ</td>
+        <td class="syl filled">Hɛ</td>
+        <td class="syl filled">HƐ</td>
+        <td class="syl filled">Hɛ̀</td>
+        <td class="syl filled">Hɛ́</td>
+        <td class="syl filled">Hɛ́</td>
+        <td class="syl filled">Hɛ̃</td>
+        <td class="syl filled">HƐ̃</td>
+        <td class="syl filled">HƐ̃́</td>
+        <td class="syl filled">HƐ̄</td>
+        <td class="syl filled">HƐ̃̄</td>
+        <td class="syl filled">HI</td>
+        <td class="syl filled">HÌ</td>
+        <td class="syl filled">HÍ</td>
+        <td class="syl filled">HĨ</td>
+        <td class="syl filled">HĨ́</td>
+        <td class="syl filled">HĪ</td>
+        <td class="syl filled">HĨ̄</td>
+        <td class="syl filled">HO</td>
+        <td class="syl filled">HÒ</td>
+        <td class="syl filled">HÓ</td>
+        <td class="syl filled">HŌ</td>
+        <td class="syl filled">Hɔ</td>
+        <td class="syl filled">Hɔ̀</td>
+        <td class="syl filled">Hɔ́</td>
+        <td class="syl filled">Hɔ̃</td>
+        <td class="syl filled">HƆ̃́</td>
+        <td class="syl filled">HƆ̄</td>
+        <td class="syl filled">HƆ̃̄</td>
+        <td class="syl filled">HU</td>
+        <td class="syl filled">HÙ</td>
+        <td class="syl filled">HÚ</td>
+        <td class="syl filled">HŨ</td>
+        <td class="syl filled">HṸ</td>
+        <td class="syl filled">HŪ</td>
+        <td class="syl filled">HŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">J</td>
+        <td class="syl filled">JA</td>
+        <td class="syl filled">JÀ</td>
+        <td class="syl filled">JÁ</td>
+        <td class="syl filled">JÃ</td>
+        <td class="syl filled">JÃ́</td>
+        <td class="syl filled">JĀ</td>
+        <td class="syl filled">JÃ̄</td>
+        <td class="syl filled">JE</td>
+        <td class="syl filled">JÈ</td>
+        <td class="syl filled">JÉ</td>
+        <td class="syl filled">JĒ</td>
+        <td class="syl filled">Jɛ</td>
+        <td class="syl filled">JƐ</td>
+        <td class="syl filled">Jɛ̀</td>
+        <td class="syl filled">Jɛ́</td>
+        <td class="syl filled">Jɛ́</td>
+        <td class="syl filled">Jɛ̃</td>
+        <td class="syl filled">JƐ̃</td>
+        <td class="syl filled">JƐ̃́</td>
+        <td class="syl filled">JƐ̄</td>
+        <td class="syl filled">JƐ̃̄</td>
+        <td class="syl filled">JI</td>
+        <td class="syl filled">JÌ</td>
+        <td class="syl filled">JÍ</td>
+        <td class="syl filled">JĨ</td>
+        <td class="syl filled">JĨ́</td>
+        <td class="syl filled">JĪ</td>
+        <td class="syl filled">JĨ̄</td>
+        <td class="syl filled">JO</td>
+        <td class="syl filled">JÒ</td>
+        <td class="syl filled">JÓ</td>
+        <td class="syl filled">JŌ</td>
+        <td class="syl filled">Jɔ</td>
+        <td class="syl filled">Jɔ̀</td>
+        <td class="syl filled">Jɔ́</td>
+        <td class="syl filled">Jɔ̃</td>
+        <td class="syl filled">JƆ̃́</td>
+        <td class="syl filled">JƆ̄</td>
+        <td class="syl filled">JƆ̃̄</td>
+        <td class="syl filled">JU</td>
+        <td class="syl filled">JÙ</td>
+        <td class="syl filled">JÚ</td>
+        <td class="syl filled">JŨ</td>
+        <td class="syl filled">JṸ</td>
+        <td class="syl filled">JŪ</td>
+        <td class="syl filled">JŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">K</td>
+        <td class="syl filled">KA</td>
+        <td class="syl filled">KÀ</td>
+        <td class="syl filled">KÁ</td>
+        <td class="syl filled">KÃ</td>
+        <td class="syl filled">KÃ́</td>
+        <td class="syl filled">KĀ</td>
+        <td class="syl filled">KÃ̄</td>
+        <td class="syl filled">KE</td>
+        <td class="syl filled">KÈ</td>
+        <td class="syl filled">KÉ</td>
+        <td class="syl filled">KĒ</td>
+        <td class="syl filled">Kɛ</td>
+        <td class="syl filled">KƐ</td>
+        <td class="syl filled">Kɛ̀</td>
+        <td class="syl filled">Kɛ́</td>
+        <td class="syl filled">Kɛ́</td>
+        <td class="syl filled">Kɛ̃</td>
+        <td class="syl filled">KƐ̃</td>
+        <td class="syl filled">KƐ̃́</td>
+        <td class="syl filled">KƐ̄</td>
+        <td class="syl filled">KƐ̃̄</td>
+        <td class="syl filled">KI</td>
+        <td class="syl filled">KÌ</td>
+        <td class="syl filled">KÍ</td>
+        <td class="syl filled">KĨ</td>
+        <td class="syl filled">KĨ́</td>
+        <td class="syl filled">KĪ</td>
+        <td class="syl filled">KĨ̄</td>
+        <td class="syl filled">KO</td>
+        <td class="syl filled">KÒ</td>
+        <td class="syl filled">KÓ</td>
+        <td class="syl filled">KŌ</td>
+        <td class="syl filled">Kɔ</td>
+        <td class="syl filled">Kɔ̀</td>
+        <td class="syl filled">Kɔ́</td>
+        <td class="syl filled">Kɔ̃</td>
+        <td class="syl filled">KƆ̃́</td>
+        <td class="syl filled">KƆ̄</td>
+        <td class="syl filled">KƆ̃̄</td>
+        <td class="syl filled">KU</td>
+        <td class="syl filled">KÙ</td>
+        <td class="syl filled">KÚ</td>
+        <td class="syl filled">KŨ</td>
+        <td class="syl filled">KṸ</td>
+        <td class="syl filled">KŪ</td>
+        <td class="syl filled">KŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">L</td>
+        <td class="syl filled">LA</td>
+        <td class="syl filled">LÀ</td>
+        <td class="syl filled">LÁ</td>
+        <td class="syl filled">LÃ</td>
+        <td class="syl filled">LÃ́</td>
+        <td class="syl filled">LĀ</td>
+        <td class="syl filled">LÃ̄</td>
+        <td class="syl filled">LE</td>
+        <td class="syl filled">LÈ</td>
+        <td class="syl filled">LÉ</td>
+        <td class="syl filled">LĒ</td>
+        <td class="syl filled">Lɛ</td>
+        <td class="syl filled">LƐ</td>
+        <td class="syl filled">Lɛ̀</td>
+        <td class="syl filled">Lɛ́</td>
+        <td class="syl filled">Lɛ́</td>
+        <td class="syl filled">Lɛ̃</td>
+        <td class="syl filled">LƐ̃</td>
+        <td class="syl filled">LƐ̃́</td>
+        <td class="syl filled">LƐ̄</td>
+        <td class="syl filled">LƐ̃̄</td>
+        <td class="syl filled">LI</td>
+        <td class="syl filled">LÌ</td>
+        <td class="syl filled">LÍ</td>
+        <td class="syl filled">LĨ</td>
+        <td class="syl filled">LĨ́</td>
+        <td class="syl filled">LĪ</td>
+        <td class="syl filled">LĨ̄</td>
+        <td class="syl filled">LO</td>
+        <td class="syl filled">LÒ</td>
+        <td class="syl filled">LÓ</td>
+        <td class="syl filled">LŌ</td>
+        <td class="syl filled">Lɔ</td>
+        <td class="syl filled">Lɔ̀</td>
+        <td class="syl filled">Lɔ́</td>
+        <td class="syl filled">Lɔ̃</td>
+        <td class="syl filled">LƆ̃́</td>
+        <td class="syl filled">LƆ̄</td>
+        <td class="syl filled">LƆ̃̄</td>
+        <td class="syl filled">LU</td>
+        <td class="syl filled">LÙ</td>
+        <td class="syl filled">LÚ</td>
+        <td class="syl filled">LŨ</td>
+        <td class="syl filled">LṸ</td>
+        <td class="syl filled">LŪ</td>
+        <td class="syl filled">LŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">M</td>
+        <td class="syl filled">MA</td>
+        <td class="syl filled">MÀ</td>
+        <td class="syl filled">MÁ</td>
+        <td class="syl filled">MÃ</td>
+        <td class="syl filled">MÃ́</td>
+        <td class="syl filled">MĀ</td>
+        <td class="syl filled">MÃ̄</td>
+        <td class="syl filled">ME</td>
+        <td class="syl filled">MÈ</td>
+        <td class="syl filled">MÉ</td>
+        <td class="syl filled">MĒ</td>
+        <td class="syl filled">Mɛ</td>
+        <td class="syl filled">MƐ</td>
+        <td class="syl filled">Mɛ̀</td>
+        <td class="syl filled">Mɛ́</td>
+        <td class="syl filled">Mɛ́</td>
+        <td class="syl filled">Mɛ̃</td>
+        <td class="syl filled">MƐ̃</td>
+        <td class="syl filled">MƐ̃́</td>
+        <td class="syl filled">MƐ̄</td>
+        <td class="syl filled">MƐ̃̄</td>
+        <td class="syl filled">MI</td>
+        <td class="syl filled">MÌ</td>
+        <td class="syl filled">MÍ</td>
+        <td class="syl filled">MĨ</td>
+        <td class="syl filled">MĨ́</td>
+        <td class="syl filled">MĪ</td>
+        <td class="syl filled">MĨ̄</td>
+        <td class="syl filled">MO</td>
+        <td class="syl filled">MÒ</td>
+        <td class="syl filled">MÓ</td>
+        <td class="syl filled">MŌ</td>
+        <td class="syl filled">Mɔ</td>
+        <td class="syl filled">Mɔ̀</td>
+        <td class="syl filled">Mɔ́</td>
+        <td class="syl filled">Mɔ̃</td>
+        <td class="syl filled">MƆ̃́</td>
+        <td class="syl filled">MƆ̄</td>
+        <td class="syl filled">MƆ̃̄</td>
+        <td class="syl filled">MU</td>
+        <td class="syl filled">MÙ</td>
+        <td class="syl filled">MÚ</td>
+        <td class="syl filled">MŨ</td>
+        <td class="syl filled">MṸ</td>
+        <td class="syl filled">MŪ</td>
+        <td class="syl filled">MŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">N</td>
+        <td class="syl filled">NA</td>
+        <td class="syl filled">NÀ</td>
+        <td class="syl filled">NÁ</td>
+        <td class="syl filled">NÃ</td>
+        <td class="syl filled">NÃ́</td>
+        <td class="syl filled">NĀ</td>
+        <td class="syl filled">NÃ̄</td>
+        <td class="syl filled">NE</td>
+        <td class="syl filled">NÈ</td>
+        <td class="syl filled">NÉ</td>
+        <td class="syl filled">NĒ</td>
+        <td class="syl filled">Nɛ</td>
+        <td class="syl filled">NƐ</td>
+        <td class="syl filled">Nɛ̀</td>
+        <td class="syl filled">Nɛ́</td>
+        <td class="syl filled">Nɛ́</td>
+        <td class="syl filled">Nɛ̃</td>
+        <td class="syl filled">NƐ̃</td>
+        <td class="syl filled">NƐ̃́</td>
+        <td class="syl filled">NƐ̄</td>
+        <td class="syl filled">NƐ̃̄</td>
+        <td class="syl filled">NI</td>
+        <td class="syl filled">NÌ</td>
+        <td class="syl filled">NÍ</td>
+        <td class="syl filled">NĨ</td>
+        <td class="syl filled">NĨ́</td>
+        <td class="syl filled">NĪ</td>
+        <td class="syl filled">NĨ̄</td>
+        <td class="syl filled">NO</td>
+        <td class="syl filled">NÒ</td>
+        <td class="syl filled">NÓ</td>
+        <td class="syl filled">NŌ</td>
+        <td class="syl filled">Nɔ</td>
+        <td class="syl filled">Nɔ̀</td>
+        <td class="syl filled">Nɔ́</td>
+        <td class="syl filled">Nɔ̃</td>
+        <td class="syl filled">NƆ̃́</td>
+        <td class="syl filled">NƆ̄</td>
+        <td class="syl filled">NƆ̃̄</td>
+        <td class="syl filled">NU</td>
+        <td class="syl filled">NÙ</td>
+        <td class="syl filled">NÚ</td>
+        <td class="syl filled">NŨ</td>
+        <td class="syl filled">NṸ</td>
+        <td class="syl filled">NŪ</td>
+        <td class="syl filled">NŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">P</td>
+        <td class="syl filled">PA</td>
+        <td class="syl filled">PÀ</td>
+        <td class="syl filled">PÁ</td>
+        <td class="syl filled">PÃ</td>
+        <td class="syl filled">PÃ́</td>
+        <td class="syl filled">PĀ</td>
+        <td class="syl filled">PÃ̄</td>
+        <td class="syl filled">PE</td>
+        <td class="syl filled">PÈ</td>
+        <td class="syl filled">PÉ</td>
+        <td class="syl filled">PĒ</td>
+        <td class="syl filled">Pɛ</td>
+        <td class="syl filled">PƐ</td>
+        <td class="syl filled">Pɛ̀</td>
+        <td class="syl filled">Pɛ́</td>
+        <td class="syl filled">Pɛ́</td>
+        <td class="syl filled">Pɛ̃</td>
+        <td class="syl filled">PƐ̃</td>
+        <td class="syl filled">PƐ̃́</td>
+        <td class="syl filled">PƐ̄</td>
+        <td class="syl filled">PƐ̃̄</td>
+        <td class="syl filled">PI</td>
+        <td class="syl filled">PÌ</td>
+        <td class="syl filled">PÍ</td>
+        <td class="syl filled">PĨ</td>
+        <td class="syl filled">PĨ́</td>
+        <td class="syl filled">PĪ</td>
+        <td class="syl filled">PĨ̄</td>
+        <td class="syl filled">PO</td>
+        <td class="syl filled">PÒ</td>
+        <td class="syl filled">PÓ</td>
+        <td class="syl filled">PŌ</td>
+        <td class="syl filled">Pɔ</td>
+        <td class="syl filled">Pɔ̀</td>
+        <td class="syl filled">Pɔ́</td>
+        <td class="syl filled">Pɔ̃</td>
+        <td class="syl filled">PƆ̃́</td>
+        <td class="syl filled">PƆ̄</td>
+        <td class="syl filled">PƆ̃̄</td>
+        <td class="syl filled">PU</td>
+        <td class="syl filled">PÙ</td>
+        <td class="syl filled">PÚ</td>
+        <td class="syl filled">PŨ</td>
+        <td class="syl filled">PṸ</td>
+        <td class="syl filled">PŪ</td>
+        <td class="syl filled">PŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">R</td>
+        <td class="syl filled">RA</td>
+        <td class="syl filled">RÀ</td>
+        <td class="syl filled">RÁ</td>
+        <td class="syl filled">RÃ</td>
+        <td class="syl filled">RÃ́</td>
+        <td class="syl filled">RĀ</td>
+        <td class="syl filled">RÃ̄</td>
+        <td class="syl filled">RE</td>
+        <td class="syl filled">RÈ</td>
+        <td class="syl filled">RÉ</td>
+        <td class="syl filled">RĒ</td>
+        <td class="syl filled">Rɛ</td>
+        <td class="syl filled">RƐ</td>
+        <td class="syl filled">Rɛ̀</td>
+        <td class="syl filled">Rɛ́</td>
+        <td class="syl filled">Rɛ́</td>
+        <td class="syl filled">Rɛ̃</td>
+        <td class="syl filled">RƐ̃</td>
+        <td class="syl filled">RƐ̃́</td>
+        <td class="syl filled">RƐ̄</td>
+        <td class="syl filled">RƐ̃̄</td>
+        <td class="syl filled">RI</td>
+        <td class="syl filled">RÌ</td>
+        <td class="syl filled">RÍ</td>
+        <td class="syl filled">RĨ</td>
+        <td class="syl filled">RĨ́</td>
+        <td class="syl filled">RĪ</td>
+        <td class="syl filled">RĨ̄</td>
+        <td class="syl filled">RO</td>
+        <td class="syl filled">RÒ</td>
+        <td class="syl filled">RÓ</td>
+        <td class="syl filled">RŌ</td>
+        <td class="syl filled">Rɔ</td>
+        <td class="syl filled">Rɔ̀</td>
+        <td class="syl filled">Rɔ́</td>
+        <td class="syl filled">Rɔ̃</td>
+        <td class="syl filled">RƆ̃́</td>
+        <td class="syl filled">RƆ̄</td>
+        <td class="syl filled">RƆ̃̄</td>
+        <td class="syl filled">RU</td>
+        <td class="syl filled">RÙ</td>
+        <td class="syl filled">RÚ</td>
+        <td class="syl filled">RŨ</td>
+        <td class="syl filled">RṸ</td>
+        <td class="syl filled">RŪ</td>
+        <td class="syl filled">RŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">S</td>
+        <td class="syl filled">SA</td>
+        <td class="syl filled">SÀ</td>
+        <td class="syl filled">SÁ</td>
+        <td class="syl filled">SÃ</td>
+        <td class="syl filled">SÃ́</td>
+        <td class="syl filled">SĀ</td>
+        <td class="syl filled">SÃ̄</td>
+        <td class="syl filled">SE</td>
+        <td class="syl filled">SÈ</td>
+        <td class="syl filled">SÉ</td>
+        <td class="syl filled">SĒ</td>
+        <td class="syl filled">Sɛ</td>
+        <td class="syl filled">SƐ</td>
+        <td class="syl filled">Sɛ̀</td>
+        <td class="syl filled">Sɛ́</td>
+        <td class="syl filled">Sɛ́</td>
+        <td class="syl filled">Sɛ̃</td>
+        <td class="syl filled">SƐ̃</td>
+        <td class="syl filled">SƐ̃́</td>
+        <td class="syl filled">SƐ̄</td>
+        <td class="syl filled">SƐ̃̄</td>
+        <td class="syl filled">SI</td>
+        <td class="syl filled">SÌ</td>
+        <td class="syl filled">SÍ</td>
+        <td class="syl filled">SĨ</td>
+        <td class="syl filled">SĨ́</td>
+        <td class="syl filled">SĪ</td>
+        <td class="syl filled">SĨ̄</td>
+        <td class="syl filled">SO</td>
+        <td class="syl filled">SÒ</td>
+        <td class="syl filled">SÓ</td>
+        <td class="syl filled">SŌ</td>
+        <td class="syl filled">Sɔ</td>
+        <td class="syl filled">Sɔ̀</td>
+        <td class="syl filled">Sɔ́</td>
+        <td class="syl filled">Sɔ̃</td>
+        <td class="syl filled">SƆ̃́</td>
+        <td class="syl filled">SƆ̄</td>
+        <td class="syl filled">SƆ̃̄</td>
+        <td class="syl filled">SU</td>
+        <td class="syl filled">SÙ</td>
+        <td class="syl filled">SÚ</td>
+        <td class="syl filled">SŨ</td>
+        <td class="syl filled">SṸ</td>
+        <td class="syl filled">SŪ</td>
+        <td class="syl filled">SŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">T</td>
+        <td class="syl filled">TA</td>
+        <td class="syl filled">TÀ</td>
+        <td class="syl filled">TÁ</td>
+        <td class="syl filled">TÃ</td>
+        <td class="syl filled">TÃ́</td>
+        <td class="syl filled">TĀ</td>
+        <td class="syl filled">TÃ̄</td>
+        <td class="syl filled">TE</td>
+        <td class="syl filled">TÈ</td>
+        <td class="syl filled">TÉ</td>
+        <td class="syl filled">TĒ</td>
+        <td class="syl filled">Tɛ</td>
+        <td class="syl filled">TƐ</td>
+        <td class="syl filled">Tɛ̀</td>
+        <td class="syl filled">Tɛ́</td>
+        <td class="syl filled">Tɛ́</td>
+        <td class="syl filled">Tɛ̃</td>
+        <td class="syl filled">TƐ̃</td>
+        <td class="syl filled">TƐ̃́</td>
+        <td class="syl filled">TƐ̄</td>
+        <td class="syl filled">TƐ̃̄</td>
+        <td class="syl filled">TI</td>
+        <td class="syl filled">TÌ</td>
+        <td class="syl filled">TÍ</td>
+        <td class="syl filled">TĨ</td>
+        <td class="syl filled">TĨ́</td>
+        <td class="syl filled">TĪ</td>
+        <td class="syl filled">TĨ̄</td>
+        <td class="syl filled">TO</td>
+        <td class="syl filled">TÒ</td>
+        <td class="syl filled">TÓ</td>
+        <td class="syl filled">TŌ</td>
+        <td class="syl filled">Tɔ</td>
+        <td class="syl filled">Tɔ̀</td>
+        <td class="syl filled">Tɔ́</td>
+        <td class="syl filled">Tɔ̃</td>
+        <td class="syl filled">TƆ̃́</td>
+        <td class="syl filled">TƆ̄</td>
+        <td class="syl filled">TƆ̃̄</td>
+        <td class="syl filled">TU</td>
+        <td class="syl filled">TÙ</td>
+        <td class="syl filled">TÚ</td>
+        <td class="syl filled">TŨ</td>
+        <td class="syl filled">TṸ</td>
+        <td class="syl filled">TŪ</td>
+        <td class="syl filled">TŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">V</td>
+        <td class="syl filled">VA</td>
+        <td class="syl filled">VÀ</td>
+        <td class="syl filled">VÁ</td>
+        <td class="syl filled">VÃ</td>
+        <td class="syl filled">VÃ́</td>
+        <td class="syl filled">VĀ</td>
+        <td class="syl filled">VÃ̄</td>
+        <td class="syl filled">VE</td>
+        <td class="syl filled">VÈ</td>
+        <td class="syl filled">VÉ</td>
+        <td class="syl filled">VĒ</td>
+        <td class="syl filled">Vɛ</td>
+        <td class="syl filled">VƐ</td>
+        <td class="syl filled">Vɛ̀</td>
+        <td class="syl filled">Vɛ́</td>
+        <td class="syl filled">Vɛ́</td>
+        <td class="syl filled">Vɛ̃</td>
+        <td class="syl filled">VƐ̃</td>
+        <td class="syl filled">VƐ̃́</td>
+        <td class="syl filled">VƐ̄</td>
+        <td class="syl filled">VƐ̃̄</td>
+        <td class="syl filled">VI</td>
+        <td class="syl filled">VÌ</td>
+        <td class="syl filled">VÍ</td>
+        <td class="syl filled">VĨ</td>
+        <td class="syl filled">VĨ́</td>
+        <td class="syl filled">VĪ</td>
+        <td class="syl filled">VĨ̄</td>
+        <td class="syl filled">VO</td>
+        <td class="syl filled">VÒ</td>
+        <td class="syl filled">VÓ</td>
+        <td class="syl filled">VŌ</td>
+        <td class="syl filled">Vɔ</td>
+        <td class="syl filled">Vɔ̀</td>
+        <td class="syl filled">Vɔ́</td>
+        <td class="syl filled">Vɔ̃</td>
+        <td class="syl filled">VƆ̃́</td>
+        <td class="syl filled">VƆ̄</td>
+        <td class="syl filled">VƆ̃̄</td>
+        <td class="syl filled">VU</td>
+        <td class="syl filled">VÙ</td>
+        <td class="syl filled">VÚ</td>
+        <td class="syl filled">VŨ</td>
+        <td class="syl filled">VṸ</td>
+        <td class="syl filled">VŪ</td>
+        <td class="syl filled">VŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">W</td>
+        <td class="syl filled">WA</td>
+        <td class="syl filled">WÀ</td>
+        <td class="syl filled">WÁ</td>
+        <td class="syl filled">WÃ</td>
+        <td class="syl filled">WÃ́</td>
+        <td class="syl filled">WĀ</td>
+        <td class="syl filled">WÃ̄</td>
+        <td class="syl filled">WE</td>
+        <td class="syl filled">WÈ</td>
+        <td class="syl filled">WÉ</td>
+        <td class="syl filled">WĒ</td>
+        <td class="syl filled">Wɛ</td>
+        <td class="syl filled">WƐ</td>
+        <td class="syl filled">Wɛ̀</td>
+        <td class="syl filled">Wɛ́</td>
+        <td class="syl filled">Wɛ́</td>
+        <td class="syl filled">Wɛ̃</td>
+        <td class="syl filled">WƐ̃</td>
+        <td class="syl filled">WƐ̃́</td>
+        <td class="syl filled">WƐ̄</td>
+        <td class="syl filled">WƐ̃̄</td>
+        <td class="syl filled">WI</td>
+        <td class="syl filled">WÌ</td>
+        <td class="syl filled">WÍ</td>
+        <td class="syl filled">WĨ</td>
+        <td class="syl filled">WĨ́</td>
+        <td class="syl filled">WĪ</td>
+        <td class="syl filled">WĨ̄</td>
+        <td class="syl filled">WO</td>
+        <td class="syl filled">WÒ</td>
+        <td class="syl filled">WÓ</td>
+        <td class="syl filled">WŌ</td>
+        <td class="syl filled">Wɔ</td>
+        <td class="syl filled">Wɔ̀</td>
+        <td class="syl filled">Wɔ́</td>
+        <td class="syl filled">Wɔ̃</td>
+        <td class="syl filled">WƆ̃́</td>
+        <td class="syl filled">WƆ̄</td>
+        <td class="syl filled">WƆ̃̄</td>
+        <td class="syl filled">WU</td>
+        <td class="syl filled">WÙ</td>
+        <td class="syl filled">WÚ</td>
+        <td class="syl filled">WŨ</td>
+        <td class="syl filled">WṸ</td>
+        <td class="syl filled">WŪ</td>
+        <td class="syl filled">WŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">Y</td>
+        <td class="syl filled">YA</td>
+        <td class="syl filled">YÀ</td>
+        <td class="syl filled">YÁ</td>
+        <td class="syl filled">YÃ</td>
+        <td class="syl filled">YÃ́</td>
+        <td class="syl filled">YĀ</td>
+        <td class="syl filled">YÃ̄</td>
+        <td class="syl filled">YE</td>
+        <td class="syl filled">YÈ</td>
+        <td class="syl filled">YÉ</td>
+        <td class="syl filled">YĒ</td>
+        <td class="syl filled">Yɛ</td>
+        <td class="syl filled">YƐ</td>
+        <td class="syl filled">Yɛ̀</td>
+        <td class="syl filled">Yɛ́</td>
+        <td class="syl filled">Yɛ́</td>
+        <td class="syl filled">Yɛ̃</td>
+        <td class="syl filled">YƐ̃</td>
+        <td class="syl filled">YƐ̃́</td>
+        <td class="syl filled">YƐ̄</td>
+        <td class="syl filled">YƐ̃̄</td>
+        <td class="syl filled">YI</td>
+        <td class="syl filled">YÌ</td>
+        <td class="syl filled">YÍ</td>
+        <td class="syl filled">YĨ</td>
+        <td class="syl filled">YĨ́</td>
+        <td class="syl filled">YĪ</td>
+        <td class="syl filled">YĨ̄</td>
+        <td class="syl filled">YO</td>
+        <td class="syl filled">YÒ</td>
+        <td class="syl filled">YÓ</td>
+        <td class="syl filled">YŌ</td>
+        <td class="syl filled">Yɔ</td>
+        <td class="syl filled">Yɔ̀</td>
+        <td class="syl filled">Yɔ́</td>
+        <td class="syl filled">Yɔ̃</td>
+        <td class="syl filled">YƆ̃́</td>
+        <td class="syl filled">YƆ̄</td>
+        <td class="syl filled">YƆ̃̄</td>
+        <td class="syl filled">YU</td>
+        <td class="syl filled">YÙ</td>
+        <td class="syl filled">YÚ</td>
+        <td class="syl filled">YŨ</td>
+        <td class="syl filled">YṸ</td>
+        <td class="syl filled">YŪ</td>
+        <td class="syl filled">YŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">Z</td>
+        <td class="syl filled">ZA</td>
+        <td class="syl filled">ZÀ</td>
+        <td class="syl filled">ZÁ</td>
+        <td class="syl filled">ZÃ</td>
+        <td class="syl filled">ZÃ́</td>
+        <td class="syl filled">ZĀ</td>
+        <td class="syl filled">ZÃ̄</td>
+        <td class="syl filled">ZE</td>
+        <td class="syl filled">ZÈ</td>
+        <td class="syl filled">ZÉ</td>
+        <td class="syl filled">ZĒ</td>
+        <td class="syl filled">Zɛ</td>
+        <td class="syl filled">ZƐ</td>
+        <td class="syl filled">Zɛ̀</td>
+        <td class="syl filled">Zɛ́</td>
+        <td class="syl filled">Zɛ́</td>
+        <td class="syl filled">Zɛ̃</td>
+        <td class="syl filled">ZƐ̃</td>
+        <td class="syl filled">ZƐ̃́</td>
+        <td class="syl filled">ZƐ̄</td>
+        <td class="syl filled">ZƐ̃̄</td>
+        <td class="syl filled">ZI</td>
+        <td class="syl filled">ZÌ</td>
+        <td class="syl filled">ZÍ</td>
+        <td class="syl filled">ZĨ</td>
+        <td class="syl filled">ZĨ́</td>
+        <td class="syl filled">ZĪ</td>
+        <td class="syl filled">ZĨ̄</td>
+        <td class="syl filled">ZO</td>
+        <td class="syl filled">ZÒ</td>
+        <td class="syl filled">ZÓ</td>
+        <td class="syl filled">ZŌ</td>
+        <td class="syl filled">Zɔ</td>
+        <td class="syl filled">Zɔ̀</td>
+        <td class="syl filled">Zɔ́</td>
+        <td class="syl filled">Zɔ̃</td>
+        <td class="syl filled">ZƆ̃́</td>
+        <td class="syl filled">ZƆ̄</td>
+        <td class="syl filled">ZƆ̃̄</td>
+        <td class="syl filled">ZU</td>
+        <td class="syl filled">ZÙ</td>
+        <td class="syl filled">ZÚ</td>
+        <td class="syl filled">ZŨ</td>
+        <td class="syl filled">ZṸ</td>
+        <td class="syl filled">ZŪ</td>
+        <td class="syl filled">ZŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">KP</td>
+        <td class="syl filled">KPA</td>
+        <td class="syl filled">KPÀ</td>
+        <td class="syl filled">KPÁ</td>
+        <td class="syl filled">KPÃ</td>
+        <td class="syl filled">KPÃ́</td>
+        <td class="syl filled">KPĀ</td>
+        <td class="syl filled">KPÃ̄</td>
+        <td class="syl filled">KPE</td>
+        <td class="syl filled">KPÈ</td>
+        <td class="syl filled">KPÉ</td>
+        <td class="syl filled">KPĒ</td>
+        <td class="syl filled">KPɛ</td>
+        <td class="syl filled">KPƐ</td>
+        <td class="syl filled">KPɛ̀</td>
+        <td class="syl filled">KPɛ́</td>
+        <td class="syl filled">KPɛ́</td>
+        <td class="syl filled">KPɛ̃</td>
+        <td class="syl filled">KPƐ̃</td>
+        <td class="syl filled">KPƐ̃́</td>
+        <td class="syl filled">KPƐ̄</td>
+        <td class="syl filled">KPƐ̃̄</td>
+        <td class="syl filled">KPI</td>
+        <td class="syl filled">KPÌ</td>
+        <td class="syl filled">KPÍ</td>
+        <td class="syl filled">KPĨ</td>
+        <td class="syl filled">KPĨ́</td>
+        <td class="syl filled">KPĪ</td>
+        <td class="syl filled">KPĨ̄</td>
+        <td class="syl filled">KPO</td>
+        <td class="syl filled">KPÒ</td>
+        <td class="syl filled">KPÓ</td>
+        <td class="syl filled">KPŌ</td>
+        <td class="syl filled">KPɔ</td>
+        <td class="syl filled">KPɔ̀</td>
+        <td class="syl filled">KPɔ́</td>
+        <td class="syl filled">KPɔ̃</td>
+        <td class="syl filled">KPƆ̃́</td>
+        <td class="syl filled">KPƆ̄</td>
+        <td class="syl filled">KPƆ̃̄</td>
+        <td class="syl filled">KPU</td>
+        <td class="syl filled">KPÙ</td>
+        <td class="syl filled">KPÚ</td>
+        <td class="syl filled">KPŨ</td>
+        <td class="syl filled">KPṸ</td>
+        <td class="syl filled">KPŪ</td>
+        <td class="syl filled">KPŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">KPL</td>
+        <td class="syl filled">KPLA</td>
+        <td class="syl filled">KPLÀ</td>
+        <td class="syl filled">KPLÁ</td>
+        <td class="syl filled">KPLÃ</td>
+        <td class="syl filled">KPLÃ́</td>
+        <td class="syl filled">KPLĀ</td>
+        <td class="syl filled">KPLÃ̄</td>
+        <td class="syl filled">KPLE</td>
+        <td class="syl filled">KPLÈ</td>
+        <td class="syl filled">KPLÉ</td>
+        <td class="syl filled">KPLĒ</td>
+        <td class="syl filled">KPLɛ</td>
+        <td class="syl filled">KPLƐ</td>
+        <td class="syl filled">KPLɛ̀</td>
+        <td class="syl filled">KPLɛ́</td>
+        <td class="syl filled">KPLɛ́</td>
+        <td class="syl filled">KPLɛ̃</td>
+        <td class="syl filled">KPLƐ̃</td>
+        <td class="syl filled">KPLƐ̃́</td>
+        <td class="syl filled">KPLƐ̄</td>
+        <td class="syl filled">KPLƐ̃̄</td>
+        <td class="syl filled">KPLI</td>
+        <td class="syl filled">KPLÌ</td>
+        <td class="syl filled">KPLÍ</td>
+        <td class="syl filled">KPLĨ</td>
+        <td class="syl filled">KPLĨ́</td>
+        <td class="syl filled">KPLĪ</td>
+        <td class="syl filled">KPLĨ̄</td>
+        <td class="syl filled">KPLO</td>
+        <td class="syl filled">KPLÒ</td>
+        <td class="syl filled">KPLÓ</td>
+        <td class="syl filled">KPLŌ</td>
+        <td class="syl filled">KPLɔ</td>
+        <td class="syl filled">KPLɔ̀</td>
+        <td class="syl filled">KPLɔ́</td>
+        <td class="syl filled">KPLɔ̃</td>
+        <td class="syl filled">KPLƆ̃́</td>
+        <td class="syl filled">KPLƆ̄</td>
+        <td class="syl filled">KPLƆ̃̄</td>
+        <td class="syl filled">KPLU</td>
+        <td class="syl filled">KPLÙ</td>
+        <td class="syl filled">KPLÚ</td>
+        <td class="syl filled">KPLŨ</td>
+        <td class="syl filled">KPLṸ</td>
+        <td class="syl filled">KPLŪ</td>
+        <td class="syl filled">KPLŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">TS</td>
+        <td class="syl filled">TSA</td>
+        <td class="syl filled">TSÀ</td>
+        <td class="syl filled">TSÁ</td>
+        <td class="syl filled">TSÃ</td>
+        <td class="syl filled">TSÃ́</td>
+        <td class="syl filled">TSĀ</td>
+        <td class="syl filled">TSÃ̄</td>
+        <td class="syl filled">TSE</td>
+        <td class="syl filled">TSÈ</td>
+        <td class="syl filled">TSÉ</td>
+        <td class="syl filled">TSĒ</td>
+        <td class="syl filled">TSɛ</td>
+        <td class="syl filled">TSƐ</td>
+        <td class="syl filled">TSɛ̀</td>
+        <td class="syl filled">TSɛ́</td>
+        <td class="syl filled">TSɛ́</td>
+        <td class="syl filled">TSɛ̃</td>
+        <td class="syl filled">TSƐ̃</td>
+        <td class="syl filled">TSƐ̃́</td>
+        <td class="syl filled">TSƐ̄</td>
+        <td class="syl filled">TSƐ̃̄</td>
+        <td class="syl filled">TSI</td>
+        <td class="syl filled">TSÌ</td>
+        <td class="syl filled">TSÍ</td>
+        <td class="syl filled">TSĨ</td>
+        <td class="syl filled">TSĨ́</td>
+        <td class="syl filled">TSĪ</td>
+        <td class="syl filled">TSĨ̄</td>
+        <td class="syl filled">TSO</td>
+        <td class="syl filled">TSÒ</td>
+        <td class="syl filled">TSÓ</td>
+        <td class="syl filled">TSŌ</td>
+        <td class="syl filled">TSɔ</td>
+        <td class="syl filled">TSɔ̀</td>
+        <td class="syl filled">TSɔ́</td>
+        <td class="syl filled">TSɔ̃</td>
+        <td class="syl filled">TSƆ̃́</td>
+        <td class="syl filled">TSƆ̄</td>
+        <td class="syl filled">TSƆ̃̄</td>
+        <td class="syl filled">TSU</td>
+        <td class="syl filled">TSÙ</td>
+        <td class="syl filled">TSÚ</td>
+        <td class="syl filled">TSŨ</td>
+        <td class="syl filled">TSṸ</td>
+        <td class="syl filled">TSŪ</td>
+        <td class="syl filled">TSŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">TSL</td>
+        <td class="syl filled">TSLA</td>
+        <td class="syl filled">TSLÀ</td>
+        <td class="syl filled">TSLÁ</td>
+        <td class="syl filled">TSLÃ</td>
+        <td class="syl filled">TSLÃ́</td>
+        <td class="syl filled">TSLĀ</td>
+        <td class="syl filled">TSLÃ̄</td>
+        <td class="syl filled">TSLE</td>
+        <td class="syl filled">TSLÈ</td>
+        <td class="syl filled">TSLÉ</td>
+        <td class="syl filled">TSLĒ</td>
+        <td class="syl filled">TSLɛ</td>
+        <td class="syl filled">TSLƐ</td>
+        <td class="syl filled">TSLɛ̀</td>
+        <td class="syl filled">TSLɛ́</td>
+        <td class="syl filled">TSLɛ́</td>
+        <td class="syl filled">TSLɛ̃</td>
+        <td class="syl filled">TSLƐ̃</td>
+        <td class="syl filled">TSLƐ̃́</td>
+        <td class="syl filled">TSLƐ̄</td>
+        <td class="syl filled">TSLƐ̃̄</td>
+        <td class="syl filled">TSLI</td>
+        <td class="syl filled">TSLÌ</td>
+        <td class="syl filled">TSLÍ</td>
+        <td class="syl filled">TSLĨ</td>
+        <td class="syl filled">TSLĨ́</td>
+        <td class="syl filled">TSLĪ</td>
+        <td class="syl filled">TSLĨ̄</td>
+        <td class="syl filled">TSLO</td>
+        <td class="syl filled">TSLÒ</td>
+        <td class="syl filled">TSLÓ</td>
+        <td class="syl filled">TSLŌ</td>
+        <td class="syl filled">TSLɔ</td>
+        <td class="syl filled">TSLɔ̀</td>
+        <td class="syl filled">TSLɔ́</td>
+        <td class="syl filled">TSLɔ̃</td>
+        <td class="syl filled">TSLƆ̃́</td>
+        <td class="syl filled">TSLƆ̄</td>
+        <td class="syl filled">TSLƆ̃̄</td>
+        <td class="syl filled">TSLU</td>
+        <td class="syl filled">TSLÙ</td>
+        <td class="syl filled">TSLÚ</td>
+        <td class="syl filled">TSLŨ</td>
+        <td class="syl filled">TSLṸ</td>
+        <td class="syl filled">TSLŪ</td>
+        <td class="syl filled">TSLŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">GB</td>
+        <td class="syl filled">GBA</td>
+        <td class="syl filled">GBÀ</td>
+        <td class="syl filled">GBÁ</td>
+        <td class="syl filled">GBÃ</td>
+        <td class="syl filled">GBÃ́</td>
+        <td class="syl filled">GBĀ</td>
+        <td class="syl filled">GBÃ̄</td>
+        <td class="syl filled">GBE</td>
+        <td class="syl filled">GBÈ</td>
+        <td class="syl filled">GBÉ</td>
+        <td class="syl filled">GBĒ</td>
+        <td class="syl filled">GBɛ</td>
+        <td class="syl filled">GBƐ</td>
+        <td class="syl filled">GBɛ̀</td>
+        <td class="syl filled">GBɛ́</td>
+        <td class="syl filled">GBɛ́</td>
+        <td class="syl filled">GBɛ̃</td>
+        <td class="syl filled">GBƐ̃</td>
+        <td class="syl filled">GBƐ̃́</td>
+        <td class="syl filled">GBƐ̄</td>
+        <td class="syl filled">GBƐ̃̄</td>
+        <td class="syl filled">GBI</td>
+        <td class="syl filled">GBÌ</td>
+        <td class="syl filled">GBÍ</td>
+        <td class="syl filled">GBĨ</td>
+        <td class="syl filled">GBĨ́</td>
+        <td class="syl filled">GBĪ</td>
+        <td class="syl filled">GBĨ̄</td>
+        <td class="syl filled">GBO</td>
+        <td class="syl filled">GBÒ</td>
+        <td class="syl filled">GBÓ</td>
+        <td class="syl filled">GBŌ</td>
+        <td class="syl filled">GBɔ</td>
+        <td class="syl filled">GBɔ̀</td>
+        <td class="syl filled">GBɔ́</td>
+        <td class="syl filled">GBɔ̃</td>
+        <td class="syl filled">GBƆ̃́</td>
+        <td class="syl filled">GBƆ̄</td>
+        <td class="syl filled">GBƆ̃̄</td>
+        <td class="syl filled">GBU</td>
+        <td class="syl filled">GBÙ</td>
+        <td class="syl filled">GBÚ</td>
+        <td class="syl filled">GBŨ</td>
+        <td class="syl filled">GBṸ</td>
+        <td class="syl filled">GBŪ</td>
+        <td class="syl filled">GBŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">GBL</td>
+        <td class="syl filled">GBLA</td>
+        <td class="syl filled">GBLÀ</td>
+        <td class="syl filled">GBLÁ</td>
+        <td class="syl filled">GBLÃ</td>
+        <td class="syl filled">GBLÃ́</td>
+        <td class="syl filled">GBLĀ</td>
+        <td class="syl filled">GBLÃ̄</td>
+        <td class="syl filled">GBLE</td>
+        <td class="syl filled">GBLÈ</td>
+        <td class="syl filled">GBLÉ</td>
+        <td class="syl filled">GBLĒ</td>
+        <td class="syl filled">GBLɛ</td>
+        <td class="syl filled">GBLƐ</td>
+        <td class="syl filled">GBLɛ̀</td>
+        <td class="syl filled">GBLɛ́</td>
+        <td class="syl filled">GBLɛ́</td>
+        <td class="syl filled">GBLɛ̃</td>
+        <td class="syl filled">GBLƐ̃</td>
+        <td class="syl filled">GBLƐ̃́</td>
+        <td class="syl filled">GBLƐ̄</td>
+        <td class="syl filled">GBLƐ̃̄</td>
+        <td class="syl filled">GBLI</td>
+        <td class="syl filled">GBLÌ</td>
+        <td class="syl filled">GBLÍ</td>
+        <td class="syl filled">GBLĨ</td>
+        <td class="syl filled">GBLĨ́</td>
+        <td class="syl filled">GBLĪ</td>
+        <td class="syl filled">GBLĨ̄</td>
+        <td class="syl filled">GBLO</td>
+        <td class="syl filled">GBLÒ</td>
+        <td class="syl filled">GBLÓ</td>
+        <td class="syl filled">GBLŌ</td>
+        <td class="syl filled">GBLɔ</td>
+        <td class="syl filled">GBLɔ̀</td>
+        <td class="syl filled">GBLɔ́</td>
+        <td class="syl filled">GBLɔ̃</td>
+        <td class="syl filled">GBLƆ̃́</td>
+        <td class="syl filled">GBLƆ̄</td>
+        <td class="syl filled">GBLƆ̃̄</td>
+        <td class="syl filled">GBLU</td>
+        <td class="syl filled">GBLÙ</td>
+        <td class="syl filled">GBLÚ</td>
+        <td class="syl filled">GBLŨ</td>
+        <td class="syl filled">GBLṸ</td>
+        <td class="syl filled">GBLŪ</td>
+        <td class="syl filled">GBLŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">NY</td>
+        <td class="syl filled">NYA</td>
+        <td class="syl filled">NYÀ</td>
+        <td class="syl filled">NYÁ</td>
+        <td class="syl filled">NYÃ</td>
+        <td class="syl filled">NYÃ́</td>
+        <td class="syl filled">NYĀ</td>
+        <td class="syl filled">NYÃ̄</td>
+        <td class="syl filled">NYE</td>
+        <td class="syl filled">NYÈ</td>
+        <td class="syl filled">NYÉ</td>
+        <td class="syl filled">NYĒ</td>
+        <td class="syl filled">NYɛ</td>
+        <td class="syl filled">NYƐ</td>
+        <td class="syl filled">NYɛ̀</td>
+        <td class="syl filled">NYɛ́</td>
+        <td class="syl filled">NYɛ́</td>
+        <td class="syl filled">NYɛ̃</td>
+        <td class="syl filled">NYƐ̃</td>
+        <td class="syl filled">NYƐ̃́</td>
+        <td class="syl filled">NYƐ̄</td>
+        <td class="syl filled">NYƐ̃̄</td>
+        <td class="syl filled">NYI</td>
+        <td class="syl filled">NYÌ</td>
+        <td class="syl filled">NYÍ</td>
+        <td class="syl filled">NYĨ</td>
+        <td class="syl filled">NYĨ́</td>
+        <td class="syl filled">NYĪ</td>
+        <td class="syl filled">NYĨ̄</td>
+        <td class="syl filled">NYO</td>
+        <td class="syl filled">NYÒ</td>
+        <td class="syl filled">NYÓ</td>
+        <td class="syl filled">NYŌ</td>
+        <td class="syl filled">NYɔ</td>
+        <td class="syl filled">NYɔ̀</td>
+        <td class="syl filled">NYɔ́</td>
+        <td class="syl filled">NYɔ̃</td>
+        <td class="syl filled">NYƆ̃́</td>
+        <td class="syl filled">NYƆ̄</td>
+        <td class="syl filled">NYƆ̃̄</td>
+        <td class="syl filled">NYU</td>
+        <td class="syl filled">NYÙ</td>
+        <td class="syl filled">NYÚ</td>
+        <td class="syl filled">NYŨ</td>
+        <td class="syl filled">NYṸ</td>
+        <td class="syl filled">NYŪ</td>
+        <td class="syl filled">NYŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">NYL</td>
+        <td class="syl filled">NYLA</td>
+        <td class="syl filled">NYLÀ</td>
+        <td class="syl filled">NYLÁ</td>
+        <td class="syl filled">NYLÃ</td>
+        <td class="syl filled">NYLÃ́</td>
+        <td class="syl filled">NYLĀ</td>
+        <td class="syl filled">NYLÃ̄</td>
+        <td class="syl filled">NYLE</td>
+        <td class="syl filled">NYLÈ</td>
+        <td class="syl filled">NYLÉ</td>
+        <td class="syl filled">NYLĒ</td>
+        <td class="syl filled">NYLɛ</td>
+        <td class="syl filled">NYLƐ</td>
+        <td class="syl filled">NYLɛ̀</td>
+        <td class="syl filled">NYLɛ́</td>
+        <td class="syl filled">NYLɛ́</td>
+        <td class="syl filled">NYLɛ̃</td>
+        <td class="syl filled">NYLƐ̃</td>
+        <td class="syl filled">NYLƐ̃́</td>
+        <td class="syl filled">NYLƐ̄</td>
+        <td class="syl filled">NYLƐ̃̄</td>
+        <td class="syl filled">NYLI</td>
+        <td class="syl filled">NYLÌ</td>
+        <td class="syl filled">NYLÍ</td>
+        <td class="syl filled">NYLĨ</td>
+        <td class="syl filled">NYLĨ́</td>
+        <td class="syl filled">NYLĪ</td>
+        <td class="syl filled">NYLĨ̄</td>
+        <td class="syl filled">NYLO</td>
+        <td class="syl filled">NYLÒ</td>
+        <td class="syl filled">NYLÓ</td>
+        <td class="syl filled">NYLŌ</td>
+        <td class="syl filled">NYLɔ</td>
+        <td class="syl filled">NYLɔ̀</td>
+        <td class="syl filled">NYLɔ́</td>
+        <td class="syl filled">NYLɔ̃</td>
+        <td class="syl filled">NYLƆ̃́</td>
+        <td class="syl filled">NYLƆ̄</td>
+        <td class="syl filled">NYLƆ̃̄</td>
+        <td class="syl filled">NYLU</td>
+        <td class="syl filled">NYLÙ</td>
+        <td class="syl filled">NYLÚ</td>
+        <td class="syl filled">NYLŨ</td>
+        <td class="syl filled">NYLṸ</td>
+        <td class="syl filled">NYLŪ</td>
+        <td class="syl filled">NYLŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">NG</td>
+        <td class="syl filled">NGA</td>
+        <td class="syl filled">NGÀ</td>
+        <td class="syl filled">NGÁ</td>
+        <td class="syl filled">NGÃ</td>
+        <td class="syl filled">NGÃ́</td>
+        <td class="syl filled">NGĀ</td>
+        <td class="syl filled">NGÃ̄</td>
+        <td class="syl filled">NGE</td>
+        <td class="syl filled">NGÈ</td>
+        <td class="syl filled">NGÉ</td>
+        <td class="syl filled">NGĒ</td>
+        <td class="syl filled">NGɛ</td>
+        <td class="syl filled">NGƐ</td>
+        <td class="syl filled">NGɛ̀</td>
+        <td class="syl filled">NGɛ́</td>
+        <td class="syl filled">NGɛ́</td>
+        <td class="syl filled">NGɛ̃</td>
+        <td class="syl filled">NGƐ̃</td>
+        <td class="syl filled">NGƐ̃́</td>
+        <td class="syl filled">NGƐ̄</td>
+        <td class="syl filled">NGƐ̃̄</td>
+        <td class="syl filled">NGI</td>
+        <td class="syl filled">NGÌ</td>
+        <td class="syl filled">NGÍ</td>
+        <td class="syl filled">NGĨ</td>
+        <td class="syl filled">NGĨ́</td>
+        <td class="syl filled">NGĪ</td>
+        <td class="syl filled">NGĨ̄</td>
+        <td class="syl filled">NGO</td>
+        <td class="syl filled">NGÒ</td>
+        <td class="syl filled">NGÓ</td>
+        <td class="syl filled">NGŌ</td>
+        <td class="syl filled">NGɔ</td>
+        <td class="syl filled">NGɔ̀</td>
+        <td class="syl filled">NGɔ́</td>
+        <td class="syl filled">NGɔ̃</td>
+        <td class="syl filled">NGƆ̃́</td>
+        <td class="syl filled">NGƆ̄</td>
+        <td class="syl filled">NGƆ̃̄</td>
+        <td class="syl filled">NGU</td>
+        <td class="syl filled">NGÙ</td>
+        <td class="syl filled">NGÚ</td>
+        <td class="syl filled">NGŨ</td>
+        <td class="syl filled">NGṸ</td>
+        <td class="syl filled">NGŪ</td>
+        <td class="syl filled">NGŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">NGL</td>
+        <td class="syl filled">NGLA</td>
+        <td class="syl filled">NGLÀ</td>
+        <td class="syl filled">NGLÁ</td>
+        <td class="syl filled">NGLÃ</td>
+        <td class="syl filled">NGLÃ́</td>
+        <td class="syl filled">NGLĀ</td>
+        <td class="syl filled">NGLÃ̄</td>
+        <td class="syl filled">NGLE</td>
+        <td class="syl filled">NGLÈ</td>
+        <td class="syl filled">NGLÉ</td>
+        <td class="syl filled">NGLĒ</td>
+        <td class="syl filled">NGLɛ</td>
+        <td class="syl filled">NGLƐ</td>
+        <td class="syl filled">NGLɛ̀</td>
+        <td class="syl filled">NGLɛ́</td>
+        <td class="syl filled">NGLɛ́</td>
+        <td class="syl filled">NGLɛ̃</td>
+        <td class="syl filled">NGLƐ̃</td>
+        <td class="syl filled">NGLƐ̃́</td>
+        <td class="syl filled">NGLƐ̄</td>
+        <td class="syl filled">NGLƐ̃̄</td>
+        <td class="syl filled">NGLI</td>
+        <td class="syl filled">NGLÌ</td>
+        <td class="syl filled">NGLÍ</td>
+        <td class="syl filled">NGLĨ</td>
+        <td class="syl filled">NGLĨ́</td>
+        <td class="syl filled">NGLĪ</td>
+        <td class="syl filled">NGLĨ̄</td>
+        <td class="syl filled">NGLO</td>
+        <td class="syl filled">NGLÒ</td>
+        <td class="syl filled">NGLÓ</td>
+        <td class="syl filled">NGLŌ</td>
+        <td class="syl filled">NGLɔ</td>
+        <td class="syl filled">NGLɔ̀</td>
+        <td class="syl filled">NGLɔ́</td>
+        <td class="syl filled">NGLɔ̃</td>
+        <td class="syl filled">NGLƆ̃́</td>
+        <td class="syl filled">NGLƆ̄</td>
+        <td class="syl filled">NGLƆ̃̄</td>
+        <td class="syl filled">NGLU</td>
+        <td class="syl filled">NGLÙ</td>
+        <td class="syl filled">NGLÚ</td>
+        <td class="syl filled">NGLŨ</td>
+        <td class="syl filled">NGLṸ</td>
+        <td class="syl filled">NGLŪ</td>
+        <td class="syl filled">NGLŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">NGM</td>
+        <td class="syl filled">NGMA</td>
+        <td class="syl filled">NGMÀ</td>
+        <td class="syl filled">NGMÁ</td>
+        <td class="syl filled">NGMÃ</td>
+        <td class="syl filled">NGMÃ́</td>
+        <td class="syl filled">NGMĀ</td>
+        <td class="syl filled">NGMÃ̄</td>
+        <td class="syl filled">NGME</td>
+        <td class="syl filled">NGMÈ</td>
+        <td class="syl filled">NGMÉ</td>
+        <td class="syl filled">NGMĒ</td>
+        <td class="syl filled">NGMɛ</td>
+        <td class="syl filled">NGMƐ</td>
+        <td class="syl filled">NGMɛ̀</td>
+        <td class="syl filled">NGMɛ́</td>
+        <td class="syl filled">NGMɛ́</td>
+        <td class="syl filled">NGMɛ̃</td>
+        <td class="syl filled">NGMƐ̃</td>
+        <td class="syl filled">NGMƐ̃́</td>
+        <td class="syl filled">NGMƐ̄</td>
+        <td class="syl filled">NGMƐ̃̄</td>
+        <td class="syl filled">NGMI</td>
+        <td class="syl filled">NGMÌ</td>
+        <td class="syl filled">NGMÍ</td>
+        <td class="syl filled">NGMĨ</td>
+        <td class="syl filled">NGMĨ́</td>
+        <td class="syl filled">NGMĪ</td>
+        <td class="syl filled">NGMĨ̄</td>
+        <td class="syl filled">NGMO</td>
+        <td class="syl filled">NGMÒ</td>
+        <td class="syl filled">NGMÓ</td>
+        <td class="syl filled">NGMŌ</td>
+        <td class="syl filled">NGMɔ</td>
+        <td class="syl filled">NGMɔ̀</td>
+        <td class="syl filled">NGMɔ́</td>
+        <td class="syl filled">NGMɔ̃</td>
+        <td class="syl filled">NGMƆ̃́</td>
+        <td class="syl filled">NGMƆ̄</td>
+        <td class="syl filled">NGMƆ̃̄</td>
+        <td class="syl filled">NGMU</td>
+        <td class="syl filled">NGMÙ</td>
+        <td class="syl filled">NGMÚ</td>
+        <td class="syl filled">NGMŨ</td>
+        <td class="syl filled">NGMṸ</td>
+        <td class="syl filled">NGMŪ</td>
+        <td class="syl filled">NGMŨ̄</td>
+      </tr>
+      <tr>
+        <td class="cons">NGML</td>
+        <td class="syl filled">NGMLA</td>
+        <td class="syl filled">NGMLÀ</td>
+        <td class="syl filled">NGMLÁ</td>
+        <td class="syl filled">NGMLÃ</td>
+        <td class="syl filled">NGMLÃ́</td>
+        <td class="syl filled">NGMLĀ</td>
+        <td class="syl filled">NGMLÃ̄</td>
+        <td class="syl filled">NGMLE</td>
+        <td class="syl filled">NGMLÈ</td>
+        <td class="syl filled">NGMLÉ</td>
+        <td class="syl filled">NGMLĒ</td>
+        <td class="syl filled">NGMLɛ</td>
+        <td class="syl filled">NGMLƐ</td>
+        <td class="syl filled">NGMLɛ̀</td>
+        <td class="syl filled">NGMLɛ́</td>
+        <td class="syl filled">NGMLɛ́</td>
+        <td class="syl filled">NGMLɛ̃</td>
+        <td class="syl filled">NGMLƐ̃</td>
+        <td class="syl filled">NGMLƐ̃́</td>
+        <td class="syl filled">NGMLƐ̄</td>
+        <td class="syl filled">NGMLƐ̃̄</td>
+        <td class="syl filled">NGMLI</td>
+        <td class="syl filled">NGMLÌ</td>
+        <td class="syl filled">NGMLÍ</td>
+        <td class="syl filled">NGMLĨ</td>
+        <td class="syl filled">NGMLĨ́</td>
+        <td class="syl filled">NGMLĪ</td>
+        <td class="syl filled">NGMLĨ̄</td>
+        <td class="syl filled">NGMLO</td>
+        <td class="syl filled">NGMLÒ</td>
+        <td class="syl filled">NGMLÓ</td>
+        <td class="syl filled">NGMLŌ</td>
+        <td class="syl filled">NGMLɔ</td>
+        <td class="syl filled">NGMLɔ̀</td>
+        <td class="syl filled">NGMLɔ́</td>
+        <td class="syl filled">NGMLɔ̃</td>
+        <td class="syl filled">NGMLƆ̃́</td>
+        <td class="syl filled">NGMLƆ̄</td>
+        <td class="syl filled">NGMLƆ̃̄</td>
+        <td class="syl filled">NGMLU</td>
+        <td class="syl filled">NGMLÙ</td>
+        <td class="syl filled">NGMLÚ</td>
+        <td class="syl filled">NGMLŨ</td>
+        <td class="syl filled">NGMLṸ</td>
+        <td class="syl filled">NGMLŪ</td>
+        <td class="syl filled">NGMLŨ̄</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="numerals-section" style="margin-top:35px;">
+  <h4 style="color:#1e293b;margin:0 0 10px;font-size:1.2rem;">Dangme Numbering System</h4>
+  <p style="color:#64748b;font-size:0.85rem;margin-bottom:15px;">Cardinal numbers in Dangme (Ada) with full tone markings.</p>
+  <div class="numerals-scroll">
+    <table class="dangme-table numerals-grid">
+      <thead><tr><th>Number</th><th>Dangme Word</th></tr></thead>
+      <tbody>
+      <tr style="background:#f8fafc;"><td>1</td><td class="dangme-word">KÁKĒ</td></tr>
+      <tr style="background:#ffffff;"><td>2</td><td class="dangme-word">ENYƆ̃</td></tr>
+      <tr style="background:#f8fafc;"><td>3</td><td class="dangme-word">ETƐ̃̄</td></tr>
+      <tr style="background:#ffffff;"><td>4</td><td class="dangme-word">EYWIƐ</td></tr>
+      <tr style="background:#f8fafc;"><td>5</td><td class="dangme-word">ÉNŨƆ̃</td></tr>
+      <tr style="background:#ffffff;"><td>6</td><td class="dangme-word">ÉKPA</td></tr>
+      <tr style="background:#f8fafc;"><td>7</td><td class="dangme-word">KPAAGŌ</td></tr>
+      <tr style="background:#ffffff;"><td>8</td><td class="dangme-word">KPAANYƆ̃</td></tr>
+      <tr style="background:#f8fafc;"><td>9</td><td class="dangme-word">NƐ̃̄Ɛ̃̄</td></tr>
+      <tr style="background:#ffffff;"><td>10</td><td class="dangme-word">NYƆ̃NGSMÃ́</td></tr>
+      <tr style="background:#f8fafc;"><td>20</td><td class="dangme-word">NYĪNGMĪ ENYƆ̃</td></tr>
+      <tr style="background:#ffffff;"><td>30</td><td class="dangme-word">NYĪNGMĪ ETƐ̃̄</td></tr>
+      <tr style="background:#f8fafc;"><td>40</td><td class="dangme-word">NYĪNGMĪ EYWIƐ</td></tr>
+      <tr style="background:#ffffff;"><td>50</td><td class="dangme-word">NYĪNGMĪ ENŨƆ̃</td></tr>
+      <tr style="background:#f8fafc;"><td>60</td><td class="dangme-word">NYĪNGMĪ EKPA</td></tr>
+      <tr style="background:#ffffff;"><td>70</td><td class="dangme-word">NYĪNGMĪ KPAAGO</td></tr>
+      <tr style="background:#f8fafc;"><td>80</td><td class="dangme-word">NYĪNGMĪ KPAANYƆ̃</td></tr>
+      <tr style="background:#ffffff;"><td>90</td><td class="dangme-word">NYĪNGMĪ NƐ̃̄Ɛ̃̄</td></tr>
+      <tr style="background:#f8fafc;"><td>100</td><td class="dangme-word">LAFÁ</td></tr>
+      <tr style="background:#ffffff;"><td>1000</td><td class="dangme-word">AKPÉ</td></tr>
+      <tr style="background:#f8fafc;"><td>1,000,000</td><td class="dangme-word">AYƆ̃</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="color:#94a3b8;font-size:0.8rem;margin-top:12px;"><i class="fas fa-download" style="margin-right:5px;"></i> <a href="DANGME_NUMBERING_SYSTEM.xlsx" download style="color:#2563eb;text-decoration:none;border-bottom:1px dotted #2563eb;">Download the full Excel workbook</a> for the complete dataset including compound syllables.</p>
+</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    
-                
-            <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- Contact Section -->
+    <section id="contact">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title" data-aos="fade-up">
                 <h2>Get In Touch</h2>
-                <p>I'd love to hear from you. Send me a message!</p>
+                <p>I would love to hear from you. Send me a message!</p>
             </div>
-            
+
             <div class="contact-container">
-                <!-- Contact Info -->
-                <div class="contact-info">
+                <div class="contact-info" data-aos="fade-right">
                     <h3>Let's Connect</h3>
-                    <p>I'm always interested in new opportunities and collaborations.</p>
-                    
+                    <p>I am always interested in new opportunities and collaborations in AI research, web development, and data-driven innovation.</p>
+
                     <div class="contact-detail">
-                        <div class="contact-icon">📧</div>
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
                         <div>
                             <h4>Email</h4>
-                            <p>jacobtser20@example.com</p>
+                            <p>jacobtser20@gmail.com</p>
                         </div>
                     </div>
-                    
+
                     <div class="contact-detail">
-                        <div class="contact-icon">📍</div>
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+233 55 949 9007</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
                         <div>
                             <h4>Location</h4>
                             <p>Available for remote work worldwide</p>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Contact Form -->
-                <div class="contact-form">
-                    <form id="contact-form" action="https://formspree.io/f/mnngvglj" method="POST">
+
+                <div class="contact-form" data-aos="fade-left">
+                    <form id="contact-form" action="https://formspree.io/f/mldpnadr" method="POST">
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="email">Email Address</label>
                             <input type="email" id="email" name="email" class="form-control" placeholder="jacobtser20@gmail.com" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="subject">Subject</label>
                             <input type="text" id="subject" name="subject" class="form-control" placeholder="What is this regarding?" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="message">Your Message</label>
                             <textarea id="message" name="message" class="form-control" placeholder="Tell me about your project or opportunity..." required></textarea>
                         </div>
-                        
+
                         <button type="submit" class="btn">Send Message</button>
-                        
-                        <!-- Form status messages -->
-                        <div id="form-status" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px;"></div>
+
+                        <div id="form-status" class="form-status"></div>
                     </form>
                 </div>
             </div>
@@ -1385,15 +3207,14 @@
             <div class="footer-content">
                 <div class="footer-about" data-aos="fade-up">
                     <div class="footer-logo">Jacob Tser Doku</div>
-                    <p>Creating Impact Through Innovation.</p>
+                    <p>Industrial Engineering Student | Web Developer & AI Research Assistant.</p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3B6LQCz%2FXWQY2pxV6X5Y4mVQ%3D%3D"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.linkedin.com/in/jacobtser"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://github.com/jacobtser"><i class="fab fa-github"></i></a>
                         <a href="https://x.com/JacobTser418"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-dribbble"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="footer-links" data-aos="fade-up" data-aos-delay="100">
                     <h4>Quick Links</h4>
                     <ul>
@@ -1404,132 +3225,331 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-links" data-aos="fade-up" data-aos-delay="200">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Electrical Installation services and Diagnosis/Repairs</a></li>
-                        <li><a href="#">Project collaborations</a></li>
-                        <li><a href="#">3D Designs and Simulations</a></li>
-                    </ul>
-                </div>
             </div>
-            
+
             <div class="copyright">
-                <p>&copy; 2025 Jacob Tser Doku. All rights reserved.</p>
+                <p>&copy; 2026 Jacob Tser Doku. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        // Initialize AOS (Animate On Scroll)
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.querySelector('.menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (menuBtn && navLinks) {
+                menuBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    const icon = menuBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+            }
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '#') return;
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        if (navLinks && navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                            const icon = menuBtn.querySelector('i');
+                            if (icon) {
+                                icon.classList.remove('fa-times');
+                                icon.classList.add('fa-bars');
+                            }
+                        }
+                    }
+                });
+            });
         });
 
-        // Mobile Menu Toggle
-        const menuBtn = document.querySelector('.menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuBtn.querySelector('i').classList.toggle('fa-times');
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 80
         });
 
         // Header scroll effect
-        window.addEventListener('scroll', () => {
+        window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
+            const scrollTop = document.getElementById('scrollTop');
+
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
+
+            if (window.scrollY > 300) {
+                scrollTop.classList.add('active');
+            } else {
+                scrollTop.classList.remove('active');
+            }
         });
 
-        // Portfolio Filter
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                // Filter logic would go here
-                // For now, we'll just log the filter
-                console.log(`Filter: ${btn.textContent}`);
+        // Scroll to top
+        document.getElementById('scrollTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
 
         // Project Tabs
         const projectTabs = document.querySelectorAll('.project-tab');
         const projectContents = document.querySelectorAll('.project-content');
-        
-        projectTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
+
+        projectTabs.forEach(function(tab) {
+            tab.addEventListener('click', function() {
                 const tabId = tab.getAttribute('data-tab');
-                
-                // Remove active class from all tabs and contents
-                projectTabs.forEach(t => t.classList.remove('active'));
-                projectContents.forEach(c => c.classList.remove('active'));
-                
-                // Add active class to clicked tab and corresponding content
+
+                projectTabs.forEach(function(t) { t.classList.remove('active'); });
+                projectContents.forEach(function(c) { c.classList.remove('active'); });
+
                 tab.classList.add('active');
-                document.getElementById(tabId).classList.add('active');
+                const content = document.getElementById(tabId);
+                if (content) {
+                    content.classList.add('active');
+                }
             });
         });
 
         // Animate skill bars on scroll
         const skillBars = document.querySelectorAll('.skill-progress');
-        
-        const animateSkillBars = () => {
-            skillBars.forEach(bar => {
+
+        function animateSkillBars() {
+            skillBars.forEach(function(bar) {
                 const width = bar.getAttribute('data-width');
                 if (isElementInViewport(bar)) {
-                    bar.style.width = `${width}%`;
+                    bar.style.width = width + '%';
                 }
             });
-        };
-        
-        const isElementInViewport = (el) => {
+        }
+
+        function isElementInViewport(el) {
             const rect = el.getBoundingClientRect();
             return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.bottom > 0
             );
-        };
-        
+        }
+
         window.addEventListener('scroll', animateSkillBars);
-        // Initial check on page load
+        window.addEventListener('load', animateSkillBars);
         animateSkillBars();
 
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Simple form validation
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            if (name && email && subject && message) {
-                // In a real application, you would send the form data to a server here
-                alert('Thank you for your message! I will get back to you soon.');
-                contactForm.reset();
-            } else {
-                alert('Please fill in all fields.');
+        // Contact form handling
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                formStatus.className = 'form-status';
+                formStatus.style.display = 'none';
+
+                try {
+                    const formData = new FormData(contactForm);
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        formStatus.textContent = 'Thank you! Your message has been sent successfully. I will get back to you soon.';
+                        formStatus.className = 'form-status success';
+                        formStatus.style.display = 'block';
+                        contactForm.reset();
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (error) {
+                    formStatus.textContent = 'Sorry, there was an error sending your message. Please try again or email me directly at jacobtser20@gmail.com.';
+                    formStatus.className = 'form-status error';
+                    formStatus.style.display = 'block';
+                } finally {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }
+            });
+        }
+    </script>
+
+<!-- Tawk.to AI Chatbot + Quick Questions -->
+    <div class="tawk-questions" id="tawkQuestions">
+        <div class="tawk-q-chip" onclick="askTawk('projects')">
+            <span class="label">What projects has Jacob worked on?</span>
+            <span class="sub">Portfolio overview</span>
+        </div>
+        <div class="tawk-q-chip" onclick="askTawk('skills')">
+            <span class="label">What are Jacob's technical skills?</span>
+            <span class="sub">Front-end, back-end, AI</span>
+        </div>
+        <div class="tawk-q-chip" onclick="askTawk('dangme')">
+            <span class="label">Tell me about the Dangme project</span>
+            <span class="sub">Phonetics & numbering system</span>
+        </div>
+        <div class="tawk-q-chip" onclick="askTawk('contact')">
+            <span class="label">How can I contact Jacob?</span>
+            <span class="sub">Email, phone & links</span>
+        </div>
+        <div class="tawk-q-chip" onclick="askTawk('ai')">
+            <span class="label">What AI work does Jacob do?</span>
+            <span class="sub">Translation, TTS, chatbots</span>
+        </div>
+    </div>
+    <div class="tawk-q-hint" id="tawkHint"><i class="fas fa-lightbulb"></i> Ask me a question</div>
+
+    <script>
+        // Tawk.to AI Chatbot + Quick Questions
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/6a62b8d417998f1d491bab07/1ju8q3vsn';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+
+        // Predefined quick questions mapped to messages
+        var tawkMsgs = {
+            'projects': 'Hi! I\'d love to learn more about Jacob\'s projects and portfolio highlights.',
+            'skills': 'Hi! What technical skills and technologies does Jacob work with?',
+            'dangme': 'Hi! Can you tell me about the Dangme Phonetics & Numbering System project?',
+            'contact': 'Hi! I\'d like to get in touch with Jacob. What are the best ways to reach him?',
+            'ai': 'Hi! I\'m interested in Jacob\'s AI work, especially with Dangme language technology.'
+        };
+
+        // Visitor info to pass to agents
+        var visitorName = localStorage.getItem('tawk_visitor_name') || '';
+        var visitorEmail = localStorage.getItem('tawk_visitor_email') || '';
+
+        // Core function: ask a predefined question
+        function askTawk(key) {
+            var msg = tawkMsgs[key] || 'Hi! I have a question about Jacob\'s work.';
+            var panel = document.getElementById('tawkQuestions');
+            var hint = document.getElementById('tawkHint');
+            if (panel) panel.classList.remove('show');
+            if (hint) { hint.style.display = 'none'; hint.style.pointerEvents = 'none'; }
+
+            if (typeof Tawk_API === 'undefined' || typeof Tawk_API.maximize !== 'function') {
+                window.open('mailto:jacobtser20@gmail.com?subject=' + encodeURIComponent('Question about Jacob\'s work') + '&body=' + encodeURIComponent(msg), '_blank');
+                return;
+            }
+
+            // Log the question event so agents see context
+            try { Tawk_API.addEvent('Visitor is asking about: ' + key, { question: msg }); } catch (e) {}
+
+            // Pass visitor attributes if available
+            try {
+                var attrs = {};
+                if (visitorName) attrs.name = visitorName;
+                if (visitorEmail) attrs.email = visitorEmail;
+                if (Object.keys(attrs).length) Tawk_API.setAttributes(attrs, function(err) {});
+            } catch (e) {}
+
+            // Search for and send the message via the widget's postMessage API
+            try {
+                Tawk_API.maximize();
+                // Attempt to send the message using Tawk's internal widget messaging
+                if (typeof Tawk_API.sendMessage === 'function') {
+                    Tawk_API.sendMessage(msg);
+                } else if (window.Tawk_SendMessage) {
+                    window.Tawk_SendMessage(msg);
+                }
+            } catch (e) {
+                Tawk_API.maximize();
+            }
+        }
+
+        // Attach visitor info from contact form (if user fills name/email fields)
+        document.addEventListener('focusout', function(e) {
+            if (e.target.id === 'name' && e.target.value.trim()) {
+                visitorName = e.target.value.trim();
+                localStorage.setItem('tawk_visitor_name', visitorName);
+                try { Tawk_API.setAttributes({ name: visitorName }, function() {}); } catch (ex) {}
+            }
+            if (e.target.id === 'email' && e.target.value.trim()) {
+                visitorEmail = e.target.value.trim();
+                localStorage.setItem('tawk_visitor_email', visitorEmail);
+                try { Tawk_API.setAttributes({ email: visitorEmail }, function() {}); } catch (ex) {}
             }
         });
+
+        // Initialize Tawk widget state handling
+        (function initTawk() {
+            var qsPanel = document.getElementById('tawkQuestions');
+            var qsHint = document.getElementById('tawkHint');
+            var tawkReady = false;
+            var shownHint = localStorage.getItem('tawk_hint_shown');
+
+            var checkTawk = setInterval(function() {
+                if (typeof Tawk_API !== 'undefined' && Tawk_API.getWindowType) {
+                    clearInterval(checkTawk);
+                    tawkReady = true;
+
+                    // Set visitor attributes if we have them
+                    try {
+                        var attrs = {};
+                        if (visitorName) attrs.name = visitorName;
+                        if (visitorEmail) attrs.email = visitorEmail;
+                        if (Object.keys(attrs).length) Tawk_API.setAttributes(attrs, function() {});
+                    } catch (e) {}
+
+                    // Handle widget maximize/minimize
+                    Tawk_API.onLoad = function() {
+                        Tawk_API.onMaximize = function() {
+                            if (qsPanel) qsPanel.classList.remove('show');
+                            if (qsHint) qsHint.style.display = 'none';
+                        };
+                        Tawk_API.onMinimize = function() {
+                            if (qsPanel && !document.querySelector('.tawk-questions:hover')) {
+                                setTimeout(function() { qsPanel.classList.add('show'); }, 600);
+                            }
+                        };
+                    };
+
+                    // Show questions panel + hint after a brief delay
+                    setTimeout(function() {
+                        if (qsPanel) qsPanel.classList.add('show');
+                        if (qsHint && !shownHint) {
+                            qsHint.style.display = 'block';
+                            localStorage.setItem('tawk_hint_shown', '1');
+                            setTimeout(function() {
+                                if (qsHint) qsHint.style.display = 'none';
+                            }, 6000);
+                        }
+                    }, 2500);
+                }
+            }, 400);
+
+            // Fallback: show questions if Tawk fails to load
+            setTimeout(function() {
+                if (!tawkReady && qsPanel) qsPanel.classList.add('show');
+            }, 5000);
+        })();
     </script>
 </body>
 </html>

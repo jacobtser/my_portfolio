@@ -1,1 +1,42 @@
+# API keys & secrets (NEVER commit)
+routes.py
+
+# Python development files
+__pycache__/
+*.pyc
+*.pyo
+.env
+.venv/
+venv/
+
+# Development utilities (not part of the site)
+check_excel.py
+check_file.py
+check_new.py
+create_numbering.py
+fill_excel.py
+read_excel.py
+repair_excel.py
+
+# Backup / duplicate Excel files (large, unnecessary)
+ENTIRE DANGME PHONETICS AND NUMBERING SYSTEM BACKUP.xlsx
+ENTIRE DANGME PHONETICS AND NUMBERING SYSTEM.xlsx
+DANGME TTS SOFTWARE.xlsx
+
+# Personal documents (not part of the portfolio)
+Cover Letter_ Jacob Doku.docx
+Jacob Doku-CV.docx
+Jacob Doku- CV.pdf
+JacobTserDoku_BSc.IndustrialEngineering.docx
+Health info.pdf
+ADASU CERT.pdf
+
+# Unused files (dead weight)
+style.css
+scripts.js
 .automate
+
+# Generated temp files
+phonetics_data.json
+tables_final.html
+tables_output.html
