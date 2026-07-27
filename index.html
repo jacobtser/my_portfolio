@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jacob Tser Doku — Industrial Engineering Student, Web Developer & AI Research Assistant. Portfolio showcasing web development, prompt engineering, and data-driven projects.">
     <title>Jacob Tser Doku - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
@@ -234,6 +237,7 @@
         .hero-content {
             position: relative;
             z-index: 1;
+            will-change: transform;
         }
 
         .hero h1 {
@@ -1215,7 +1219,7 @@
         .chat-msg a:hover{color:var(--indigo)}
         @media (max-width:480px){.chatbot-widget{right:14px;width:calc(100vw - 28px);bottom:88px}.chatbot-toggle{right:14px;bottom:20px;width:50px;height:50px;font-size:1.2rem}}
 
-        /* ---- Professional Refinements ---- */
+        /* ----Refinements ---- */
         :root {
             --indigo: #e0e0e0;
             --indigo-dark: #b0b0b0;
@@ -1417,14 +1421,15 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
+    <main>
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <canvas id="hero-canvas"></canvas>
         <div class="container">
             <div class="hero-content">
-                <h1 data-aos="fade-up">Jacob Tser Doku</h1>
-                <p data-aos="fade-up" data-aos-delay="200">Industrial Engineering Student | Prompt Engineering and AI-powered Research Enthusiast — leveraging AI, Data Analytics, and engineering principles for impactful digital solutions.</p>
-                <div class="hero-btns" data-aos="fade-up" data-aos-delay="400">
+                <h1>Jacob Tser Doku</h1>
+                <p>Industrial Engineering Student | Prompt Engineering and AI-powered Research Enthusiast — leveraging AI, Data Analytics, and engineering principles for impactful digital solutions.</p>
+                <div class="hero-btns">
                     <a href="#contact" class="btn">Get In Touch</a>
                     <a href="#portfolio" class="btn btn-secondary">View Portfolio</a>
                 </div>
@@ -1454,7 +1459,7 @@
                 </div>
                 <div class="about-img" data-aos="fade-left" data-aos-delay="300">
                     <div class="profile-img-container">
-                        <img src="profile.jpg" alt="Jacob Tser Doku" class="profile-img">
+                        <img src="profile.jpg" alt="Jacob Tser Doku" class="profile-img" width="400" height="400">
                     </div>
                 </div>
             </div>
@@ -1512,7 +1517,7 @@
 
             <div class="portfolio-grid">
                 <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
-                    <img src="1.jpeg" alt="School Management System" class="portfolio-img">
+                    <img src="1.jpeg" alt="School Management System" class="portfolio-img" width="600" height="400">
                     <div class="portfolio-overlay">
                         <h3>School Management System</h3>
                         <p>A comprehensive platform for managing school activities, built with Next.js and TypeScript.</p>
@@ -1521,7 +1526,7 @@
                 </div>
 
                 <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
-                    <img src="2.png" alt="Forefront Innovation Website" class="portfolio-img">
+                    <img src="2.png" alt="Forefront Innovation Website" class="portfolio-img" width="600" height="400">
                     <div class="portfolio-overlay">
                         <h3>Forefront Innovation Ltd</h3>
                         <p>A professional startup website showcasing products and services with direct email integration.</p>
@@ -1530,7 +1535,7 @@
                 </div>
 
                 <div class="portfolio-item" data-aos="fade-up" data-aos-delay="400">
-                    <img src="3.png" alt="Glam & Garget Hub" class="portfolio-img">
+                    <img src="3.png" alt="Glam & Garget Hub" class="portfolio-img" width="600" height="400">
                     <div class="portfolio-overlay">
                         <h3>Glam & Garget Hub</h3>
                         <p>A fully functional e-commerce business website with WhatsApp ordering integration.</p>
@@ -1546,7 +1551,7 @@
         <div class="container">
             <div class="section-title" data-aos="fade-up">
                 <h2>My Skills</h2>
-                <p>Core competencies in web development and software engineering</p>
+                <p>Core competencies in web web app development</p>
             </div>
 
             <div class="skills-container">
@@ -1590,18 +1595,7 @@
 
                     <div class="skill-item">
                         <div class="skill-header">
-                            <span>Deedseek, Claude (Anthropic), and  Gemini</span>
-                            <span>95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="95"></div>
-                        </div>
-                    </div>
-
-
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Data Analysis (Python, STATA, MS Excel)</span>
+                            <span>Data Analytics (Python, STATA, MS Excel)</span>
                             <span>55%</span>
                         </div>
                         <div class="skill-bar">
@@ -1759,12 +1753,12 @@
             <div class="project-content" id="project6" data-aos="fade-up" data-aos-delay="200">
                 <div class="project-detail">
                     <h3>Dangme Phonetics & Numbering System</h3>
-                    <p>A comprehensive structured Excel workbook documenting the entire Dangme (Ada) language phonetics foundation and numbering system. This resource captures the core building blocks of the Dangme language — from vowels, consonants, and tone markers to the complete numeral system — serving as a reference for language preservation, learning, and technology integration.</p>
+                    <p>A comprehensive structured Excel workbook documenting the entire Dangme language phonetics foundation and numbering system. This resource captures the core building blocks of the Dangme language — from vowels, consonants, and tone markers to the complete numeral system — serving as a reference for language preservation, learning, and technology integration.</p>
 
                     <div class="dangme-content">
 <div class="phonetics-section">
   <h4 style="color:#0a0a0a;margin:0 0 10px;font-size:1.2rem;">Dangme Phonetics — Consonant-Vowel Grid</h4>
-  <p style="color:#a0a0a0;font-size:0.85rem;margin-bottom:15px;">30 consonants × 46 vowels with full tone markings. Table is view-only to preserve data integrity.</p>
+  <p style="color:#a0a0a0;font-size:0.85rem;margin-bottom:15px;">36 consonants × 40 vowels with full tone markings.</p>
   <div class="phonetics-scroll">
     <table class="dangme-table phonetics-grid">
       <thead><tr>
@@ -3404,6 +3398,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -3510,7 +3505,8 @@
         AOS.init({
             duration: 800,
             once: true,
-            offset: 80
+            offset: 80,
+            disable: window.innerWidth < 768
         });
 
         // Header scroll effect
@@ -3667,7 +3663,7 @@
             <button class="chatbot-close" id="chatbotClose" aria-label="Close chatbot"><i class="fas fa-minus"></i></button>
         </div>
         <div class="chatbot-messages" id="chatbotMessages">
-            <div class="chat-msg bot">Hi! I'm Jacob's virtual assistant. Ask me anything — I can answer from my knowledge base or search the web for answers.</div>
+            <div class="chat-msg bot">Hi! I'm Jacob's virtual assistant. Ask me anything about his skills and projects.</div>
         </div>
         <div class="chatbot-questions" id="chatbotSuggestions">
             <div class="chat-suggestions">
@@ -3849,7 +3845,7 @@
             input.addEventListener('focus', function() { scrollDown(); });
         })();
 
-        (function(){var c=document.getElementById('hero-canvas'),x,W,H,t=0,sY=0,m={x:-9999,y:-9999};if(!c)return;x=c.getContext('2d');var N=[],P=[],R=[],HX=[],g=55,cd=180,pc=12;function rgb(){return document.documentElement.getAttribute('data-theme')==='light'?[96,165,250]:[224,224,224]}function rs(){var h=c.parentElement;W=c.width=h.offsetWidth;H=c.height=h.offsetHeight;init()}function init(){N=[];P=[];HX=[];var C=Math.ceil(W/g)+1,Rows=Math.ceil(H/g)+1;for(var i=0;i<C*Rows;i++){var r=Math.floor(i/C),co=i%C;N.push({x:co*g+(r%2)*g/2,y:r*g,ph:Math.random()*6.28,cn:[]})}for(var i=0;i<N.length;i++){for(var j=i+1;j<N.length;j++){var dx=N[i].x-N[j].x,dy=N[i].y-N[j].y;if(dx*dx+dy*dy<cd*cd){N[i].cn.push(j);N[j].cn.push(i)}}}for(var i=0;i<pc;i++)sp();var hc=Math.max(3,Math.floor(Math.min(W,H)/180));for(var i=0;i<hc;i++){HX.push({x:Math.random()*W,y:Math.random()*H,r:18+Math.random()*30,rt:Math.random()*6.28,rs:(Math.random()-.5)*.015,a:.06+Math.random()*.08,vx:(Math.random()-.5)*.12,vy:(Math.random()-.5)*.12})}}function sp(){var f=Math.floor(Math.random()*N.length),to=N[f].cn.length>0?N[f].cn[Math.floor(Math.random()*N[f].cn.length)]:(f+1)%N.length;P.push({f:f,t:to,p:Math.random(),s:.004+Math.random()*.006,sz:1.5+Math.random()*2})}function dG(s,a){var so=sY*.12;x.strokeStyle='rgba('+s+','+(.04+a)+')';x.lineWidth=.5;var o=(t*.15+so)%g;for(var y=-g+o;y<H+g;y+=g){x.beginPath();x.moveTo(0,y);x.lineTo(W,y);x.stroke()}for(var xp=-g+o;xp<W+g;xp+=g){x.beginPath();x.moveTo(xp,0);x.lineTo(xp,H);x.stroke()}}function dN(n,s,b){var so=sY*.04;var yy=n.y+so;var rr=1.5+Math.sin(n.ph+t*.002)*.8+.5;x.beginPath();x.arc(n.x,yy,rr,0,6.28);x.fillStyle='rgba('+s+','+b+')';x.fill();if(rr>2){x.beginPath();x.arc(n.x,yy,rr*3,0,6.28);x.fillStyle='rgba('+s+',.04)';x.fill()}}function dC(n1,n2,s,a){var so=sY*.04;x.beginPath();x.moveTo(n1.x,n1.y+so);x.lineTo(n2.x,n2.y+so);x.strokeStyle='rgba('+s+','+a+')';x.lineWidth=.6;x.stroke()}function dP(p,s){var f=N[p.f],t=N[p.t],so=sY*.04;var px=f.x+(t.x-f.x)*p.p,py=f.y+(t.y-f.y)*p.p+so;if(m.x>-9998){var dx=px-m.x,dy=py-m.y,di=Math.sqrt(dx*dx+dy*dy);if(di<120){var push=(120-di)/120*.006;px+=dx*push;py+=dy*push}}x.beginPath();x.arc(px,py,p.sz*3,0,6.28);x.fillStyle='rgba('+s+',.08)';x.fill();x.beginPath();x.arc(px,py,p.sz*.6,0,6.28);x.fillStyle='rgba('+s+',.85)';x.fill();for(var i=0;i<3;i++){var tp=p.p-(i+1)*.015;if(tp<0)continue;var tx=f.x+(t.x-f.x)*tp,ty=f.y+(t.y-f.y)*tp+so;x.beginPath();x.arc(tx,ty,p.sz*(.4-i*.1),0,6.28);x.fillStyle='rgba('+s+','+(.25-i*.07)+')';x.fill()}}function dH(h,s){var so=sY*.06;var aa=h.a*(.5+.5*Math.sin(t*.0005+h.x*.01));x.strokeStyle='rgba('+s+','+aa+')';x.lineWidth=1;x.beginPath();for(var i=0;i<6;i++){var ang=h.rt+i*1.047,px=h.x+h.r*Math.cos(ang),py=h.y+h.r*Math.sin(ang)+so;i===0?x.moveTo(px,py):x.lineTo(px,py)}x.closePath();x.stroke()}function dR(s){var so=sY*.02;if(t%120<3){R.push({cx:Math.random()*W,cy:Math.random()*H,r:3,mr:60+Math.random()*50,sp:1.2})}for(var i=R.length-1;i>=0;i--){var r=R[i];r.r+=r.sp;var aa=.12*(1-r.r/r.mr);x.beginPath();x.arc(r.cx,r.cy+so,r.r,0,6.28);x.strokeStyle='rgba('+s+','+aa+')';x.lineWidth=1;x.stroke();if(r.r>r.mr)R.splice(i,1)}}function A(){t++;x.clearRect(0,0,W,H);var col=rgb(),s=col[0]+','+col[1]+','+col[2];var b=.12+.08*Math.sin(t*.001);dG(s,b);for(var i=0;i<N.length;i++){for(var k=0;k<N[i].cn.length;k++){var j=N[i].cn[k];if(j>i){var di=Math.sqrt((N[i].x-N[j].x)**2+(N[i].y-N[j].y)**2);var aa=Math.max(0,.06*(1-di/cd));dC(N[i],N[j],s,aa)}}}for(var i=0;i<N.length;i++)dN(N[i],s,b);for(var i=P.length-1;i>=0;i--){dP(P[i],s);P[i].p+=P[i].s;if(P[i].p>=1){P[i].f=P[i].t;var nx=N[P[i].t].cn;P[i].t=nx.length>0?nx[Math.floor(Math.random()*nx.length)]:Math.floor(Math.random()*N.length);P[i].p=0;P[i].s=.004+Math.random()*.006}}for(var i=0;i<HX.length;i++){var h=HX[i];h.rt+=h.rs;h.x+=h.vx;h.y+=h.vy;if(h.x<-50)h.x=W+50;if(h.x>W+50)h.x=-50;if(h.y<-50)h.y=H+50;if(h.y>H+50)h.y=-50;dH(h,s)}dR(s);requestAnimationFrame(A)}window.addEventListener('resize',rs);window.addEventListener('scroll',function(){sY=window.scrollY||window.pageYOffset});c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();m.x=e.clientX-r.left;m.y=e.clientY-r.top});c.addEventListener('mouseleave',function(){m.x=-9999;m.y=-9999});var obs=new MutationObserver(function(){});obs.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});rs();A()})();
+        (function(){if(window.innerWidth<768){var c=document.getElementById('hero-canvas');if(c)c.parentElement.removeChild(c);return}var c=document.getElementById('hero-canvas'),x,W,H,t=0,sY=0,m={x:-9999,y:-9999};if(!c)return;x=c.getContext('2d');var N=[],P=[],R=[],HX=[],g=55,cd=180,pc=12;function rgb(){return document.documentElement.getAttribute('data-theme')==='light'?[96,165,250]:[224,224,224]}function rs(){var h=c.parentElement;W=c.width=h.offsetWidth;H=c.height=h.offsetHeight;init()}function init(){N=[];P=[];HX=[];var C=Math.ceil(W/g)+1,Rows=Math.ceil(H/g)+1;for(var i=0;i<C*Rows;i++){var r=Math.floor(i/C),co=i%C;N.push({x:co*g+(r%2)*g/2,y:r*g,ph:Math.random()*6.28,cn:[]})}for(var i=0;i<N.length;i++){for(var j=i+1;j<N.length;j++){var dx=N[i].x-N[j].x,dy=N[i].y-N[j].y;if(dx*dx+dy*dy<cd*cd){N[i].cn.push(j);N[j].cn.push(i)}}}for(var i=0;i<pc;i++)sp();var hc=Math.max(3,Math.floor(Math.min(W,H)/180));for(var i=0;i<hc;i++){HX.push({x:Math.random()*W,y:Math.random()*H,r:18+Math.random()*30,rt:Math.random()*6.28,rs:(Math.random()-.5)*.015,a:.06+Math.random()*.08,vx:(Math.random()-.5)*.12,vy:(Math.random()-.5)*.12})}}function sp(){var f=Math.floor(Math.random()*N.length),to=N[f].cn.length>0?N[f].cn[Math.floor(Math.random()*N[f].cn.length)]:(f+1)%N.length;P.push({f:f,t:to,p:Math.random(),s:.004+Math.random()*.006,sz:1.5+Math.random()*2})}function dG(s,a){var so=sY*.12;x.strokeStyle='rgba('+s+','+(.04+a)+')';x.lineWidth=.5;var o=(t*.15+so)%g;for(var y=-g+o;y<H+g;y+=g){x.beginPath();x.moveTo(0,y);x.lineTo(W,y);x.stroke()}for(var xp=-g+o;xp<W+g;xp+=g){x.beginPath();x.moveTo(xp,0);x.lineTo(xp,H);x.stroke()}}function dN(n,s,b){var so=sY*.04;var yy=n.y+so;var rr=1.5+Math.sin(n.ph+t*.002)*.8+.5;x.beginPath();x.arc(n.x,yy,rr,0,6.28);x.fillStyle='rgba('+s+','+b+')';x.fill();if(rr>2){x.beginPath();x.arc(n.x,yy,rr*3,0,6.28);x.fillStyle='rgba('+s+',.04)';x.fill()}}function dC(n1,n2,s,a){var so=sY*.04;x.beginPath();x.moveTo(n1.x,n1.y+so);x.lineTo(n2.x,n2.y+so);x.strokeStyle='rgba('+s+','+a+')';x.lineWidth=.6;x.stroke()}function dP(p,s){var f=N[p.f],t=N[p.t],so=sY*.04;var px=f.x+(t.x-f.x)*p.p,py=f.y+(t.y-f.y)*p.p+so;if(m.x>-9998){var dx=px-m.x,dy=py-m.y,di=Math.sqrt(dx*dx+dy*dy);if(di<120){var push=(120-di)/120*.006;px+=dx*push;py+=dy*push}}x.beginPath();x.arc(px,py,p.sz*3,0,6.28);x.fillStyle='rgba('+s+',.08)';x.fill();x.beginPath();x.arc(px,py,p.sz*.6,0,6.28);x.fillStyle='rgba('+s+',.85)';x.fill();for(var i=0;i<3;i++){var tp=p.p-(i+1)*.015;if(tp<0)continue;var tx=f.x+(t.x-f.x)*tp,ty=f.y+(t.y-f.y)*tp+so;x.beginPath();x.arc(tx,ty,p.sz*(.4-i*.1),0,6.28);x.fillStyle='rgba('+s+','+(.25-i*.07)+')';x.fill()}}function dH(h,s){var so=sY*.06;var aa=h.a*(.5+.5*Math.sin(t*.0005+h.x*.01));x.strokeStyle='rgba('+s+','+aa+')';x.lineWidth=1;x.beginPath();for(var i=0;i<6;i++){var ang=h.rt+i*1.047,px=h.x+h.r*Math.cos(ang),py=h.y+h.r*Math.sin(ang)+so;i===0?x.moveTo(px,py):x.lineTo(px,py)}x.closePath();x.stroke()}function dR(s){var so=sY*.02;if(t%120<3){R.push({cx:Math.random()*W,cy:Math.random()*H,r:3,mr:60+Math.random()*50,sp:1.2})}for(var i=R.length-1;i>=0;i--){var r=R[i];r.r+=r.sp;var aa=.12*(1-r.r/r.mr);x.beginPath();x.arc(r.cx,r.cy+so,r.r,0,6.28);x.strokeStyle='rgba('+s+','+aa+')';x.lineWidth=1;x.stroke();if(r.r>r.mr)R.splice(i,1)}}function A(){t++;x.clearRect(0,0,W,H);var col=rgb(),s=col[0]+','+col[1]+','+col[2];var b=.12+.08*Math.sin(t*.001);dG(s,b);for(var i=0;i<N.length;i++){for(var k=0;k<N[i].cn.length;k++){var j=N[i].cn[k];if(j>i){var di=Math.sqrt((N[i].x-N[j].x)**2+(N[i].y-N[j].y)**2);var aa=Math.max(0,.06*(1-di/cd));dC(N[i],N[j],s,aa)}}}for(var i=0;i<N.length;i++)dN(N[i],s,b);for(var i=P.length-1;i>=0;i--){dP(P[i],s);P[i].p+=P[i].s;if(P[i].p>=1){P[i].f=P[i].t;var nx=N[P[i].t].cn;P[i].t=nx.length>0?nx[Math.floor(Math.random()*nx.length)]:Math.floor(Math.random()*N.length);P[i].p=0;P[i].s=.004+Math.random()*.006}}for(var i=0;i<HX.length;i++){var h=HX[i];h.rt+=h.rs;h.x+=h.vx;h.y+=h.vy;if(h.x<-50)h.x=W+50;if(h.x>W+50)h.x=-50;if(h.y<-50)h.y=H+50;if(h.y>H+50)h.y=-50;dH(h,s)}dR(s);requestAnimationFrame(A)}window.addEventListener('resize',rs);window.addEventListener('scroll',function(){sY=window.scrollY||window.pageYOffset});c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();m.x=e.clientX-r.left;m.y=e.clientY-r.top});c.addEventListener('mouseleave',function(){m.x=-9999;m.y=-9999});var obs=new MutationObserver(function(){});obs.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});rs();A()})();
     </script>
 </body>
 </html>
